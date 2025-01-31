@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.scrollWidget {
+  transition: visibility 200ms linear, opacity 200ms linear;
+}
+
+.scrollWidget > .arrow {
+  transition: 500ms;
+}
+
+.scrollWidget:hover > .arrow {
+  transform: translateY(4px);
+}
+
+.main-link {
+    @apply inline-flex items-center font-semibold space-x-2 text-gray-200 hover:text-white transition-colors duration-300;
+}
