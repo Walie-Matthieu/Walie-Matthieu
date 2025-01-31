@@ -59,9 +59,9 @@ export default function Home() {
   const introSection = () => (
     <div
       id="intro-section"
-      className="min-h-screen flex flex-col items-center justify-center text-center"
+      className="min-h-screen flex flex-col items-center justify-center text-center gap-6"
     >
-      <div className="relative w-48 h-48 mb-4">
+      <div className="relative w-48 h-48">
         <Image
           src="/PFP.jpg"
           alt="PFP"
@@ -77,12 +77,14 @@ export default function Home() {
           className="rounded-full absolute top-0 left-0 opacity-0 transition-opacity duration-500 hover:opacity-100"
         />
       </div>
-      <h1 className="text-5xl font-bold text-white">
-        WTF is Benjamin Azoulay?
-      </h1>
-      <h2 className="py-6 text-gray-200 font-semibold max-w-lg">
-        A bird, a plane, a Full-Stack Web3 Engineer? Let's find out!
-      </h2>
+      <div>
+        <h1 className="text-2xl sm:text-5xl font-bold text-white mb-4 justify-center">
+          WTF is Benjamin Azoulay?
+        </h1>
+        <h2 className=" text-gray-200 font-semibold max-w-lg">
+          A bird, a plane, a Full-Stack Web3 Engineer? Let's find out!
+        </h2>
+      </div>
       <div className="grid grid-cols-3 gap-3 sm:gap-8 justify-items-center font-medium sm:text-lg">
         <a
           className="main-link"

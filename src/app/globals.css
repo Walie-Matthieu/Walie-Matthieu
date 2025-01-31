@@ -15,5 +15,5 @@
 }
 
 .main-link {
-    @apply inline-flex items-center font-semibold space-x-2 text-gray-200 hover:text-white transition-colors duration-300;
+  @apply inline-flex items-center font-semibold space-x-2 text-white hover:text-gray-200 transition-colors duration-300;
 }
