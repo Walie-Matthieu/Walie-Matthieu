@@ -1,6 +1,9 @@
 import { FC } from "react";
 import RiskophobeProject from "./RiskophobeProject";
 import FlashstakeProject from "./FlashstakeProject";
+import ArturProject from "./ArturProject";
+import UpsideWTFProject from "./UpsideWTFProject";
+import EpochIslandProject from "./EpochIslandProject";
 
 export interface ProjectContentProps {
   color: string;
@@ -11,7 +14,6 @@ interface Project {
   color: string;
   logo: string;
   content: FC<ProjectContentProps>;
-  link: string;
 }
 
 const projectData: Project[] = [
@@ -19,15 +21,28 @@ const projectData: Project[] = [
     title: "Riskophobe",
     logo: "/logos/Riskophobe.png",
     content: RiskophobeProject,
-    link: "https://riskophobe.com/",
     color: "#6B46C1",
   },
   {
     title: "Flashstake",
     logo: "/logos/Flashstake.png",
     content: FlashstakeProject,
-    link: "https://flashstake.io/",
     color: "#FE0094",
+  },{
+    title: "Artur.ai",
+    logo: "/logos/Artur.png",
+    content: ArturProject,
+    color: "#3C6AF6",
+  },{
+    title: "Upside",
+    logo: "/logos/Upside.png",
+    content: UpsideWTFProject,
+    color: "rgb(149, 255, 217)",
+  },{
+    title: "EpochIsland",
+    logo: "/logos/Epoch.png",
+    content: EpochIslandProject,
+    color: "#F1F1F1",
   },
 ];
 

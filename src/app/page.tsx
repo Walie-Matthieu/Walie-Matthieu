@@ -16,7 +16,7 @@ export default function Home() {
   const introSection = () => (
     <div
       id="intro-section"
-      className="min-h-screen flex flex-col items-center justify-center text-center gap-6"
+      className="min-h-screen flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-red-900 to-gray-800 "
     >
       <div className="relative w-48 h-48">
         <Image
@@ -86,7 +86,7 @@ export default function Home() {
     return (
       <div
         ref={projectsSectionRef}
-        className="py-6 sm:py-12 px-1 sm:px-6 md:px-12 lg:p-16 text-center space-y-16"
+        className="py-6 sm:py-12 px-1 sm:px-6 md:px-12 lg:p-16 text-center space-y-16 bg-gray-800"
       >
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-white">Portfolio</h2>
@@ -94,7 +94,7 @@ export default function Home() {
             A selection of recent projects I'm proud of
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-16">
+        <div className="grid grid-cols-1">
           {projectData.map((project, index) => (
             <ProjectBox
               key={index}
@@ -110,7 +110,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gradient-to-br from-red-900 to-gray-800 min-h-screen text-white">
+    <main className="min-h-screen text-white">
       {introSection()}
       {projectsSection()}
     </main>
