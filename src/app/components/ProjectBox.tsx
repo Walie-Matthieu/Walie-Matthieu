@@ -23,17 +23,14 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, children }) => {
           borderColor: color,
         }}
       >
-        <Image
-          src={image}
-          alt={`${title} logo`}
-          width={72}
-          height={72}
-        />
+        <Image src={image} alt={`${title} logo`} width={72} height={72} />
       </div>
 
       {/* Box Content */}
       <div className="mt-8">
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-2xl font-semibold" style={{ color }}>
+          {title}
+        </h3>
         <div className="mt-2 text-gray-600">{children}</div>
       </div>
     </div>

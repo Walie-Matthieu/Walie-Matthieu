@@ -1,9 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import ProjectBox from "./components/ProjectBox";
 import ScrollWidget from "./components/ScrollWidget";
+
+interface Project {
+  title: string;
+  color: string;
+  logo: string;
+  content: ReactNode;
+  link: string;
+}
 
 export default function Home() {
   const projectsSectionRef = useRef<HTMLDivElement>(null);
@@ -79,8 +87,16 @@ export default function Home() {
 
   const projectsSection = () => {
     return (
-      <div ref={projectsSectionRef} className="p-6 md:p-12 lg:p-16 text-center">
-        <h2 className="text-2xl font-bold mb-8 text-white">Key Projects</h2>
+      <div
+        ref={projectsSectionRef}
+        className="p-6 md:p-12 lg:p-16 text-center space-y-16"
+      >
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold text-white">Portfolio</h2>
+          <h3 className="text-gray-300 font-semibold">
+            A selection of recent projects I'm proud of
+          </h3>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ProjectBox
             title="Riskophobe"
