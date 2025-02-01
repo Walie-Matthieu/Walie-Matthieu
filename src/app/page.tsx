@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { useRef } from "react";
 import ProjectBox from "./components/ProjectBox";
-import ScrollWidget from "./components/ScrollWidget";
 import projectData from "./projects/projectData";
+import dynamic from "next/dynamic";
+
+const ScrollWidget = dynamic(() => import("./components/ScrollWidget"), {
+  ssr: false,
+});
 
 export default function Home() {
   const projectsSectionRef = useRef<HTMLDivElement>(null);
