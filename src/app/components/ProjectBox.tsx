@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FC, ReactNode } from "react";
+import { CSSProperties, FC } from "react";
 import { ProjectContentProps } from "../projects/projectData";
 
 interface ProjectBoxProps {
@@ -12,19 +12,27 @@ interface ProjectBoxProps {
 const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
   return (
     <div
-      className="relative bg-gray-900 shadow-lg rounded-lg p-6 text-center border-2"
-      style={{ borderColor: color }}
+      className="relative group dark-glass shadow-lg rounded-lg p-6 text-center"
+      style={{ "--glow-color": color } as CSSProperties}
     >
       {/* Logo Container */}
       <div
-        className={`absolute left-1/2 -translate-x-1/2 -top-12 border-2 rounded-full bg-gray-900 flex items-center justify-center shadow-md`}
-        style={{
-          width: 96,
-          height: 96,
-          borderColor: color,
-        }}
+        className="absolute left-1/2 -translate-x-1/2 -top-12 rounded-full bg-gray-900 flex items-center justify-center shadow-md neon-logo"
+        style={
+          {
+            width: 96,
+            height: 96,
+            "--glow-color": color,
+          } as CSSProperties
+        }
       >
-        <Image src={image} alt={`${title} logo`} width={96} height={96} />
+        <Image
+          src={image}
+          alt={`${title} logo`}
+          width={96}
+          height={96}
+          className="rounded-full"
+        />
       </div>
 
       {/* Box Content */}
