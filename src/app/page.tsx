@@ -44,15 +44,15 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-3 gap-3 sm:gap-8 justify-items-center font-medium sm:text-lg">
         <a
-          className="main-link"
+          className="bullet-link"
           href="https://github.com/BenAzlay"
           target="_blank"
         >
           <Image src="/logos/Github.png" alt="Github" width={24} height={24} />
-          <span>Github</span>
+          <span className="label">Github</span>
         </a>
         <a
-          className="main-link"
+          className="bullet-link"
           href="https://www.linkedin.com/in/benjaminazoulay1"
           target="_blank"
         >
@@ -62,10 +62,10 @@ export default function Home() {
             width={24}
             height={24}
           />
-          <span>LinkedIn</span>
+          <span className="label">LinkedIn</span>
         </a>
         <a
-          className="main-link"
+          className="bullet-link"
           href="https://blog.benjaminazoulay.com/"
           target="_blank"
         >
@@ -75,7 +75,7 @@ export default function Home() {
             width={24}
             height={24}
           />{" "}
-          <span>Tutorials</span>
+          <span className="label">Tutorials</span>
         </a>
       </div>
       <ScrollWidget projectsSectionRef={projectsSectionRef} />
@@ -86,7 +86,7 @@ export default function Home() {
     return (
       <div
         ref={projectsSectionRef}
-        className="p-6 md:p-12 lg:p-16 text-center space-y-16"
+        className="py-6 sm:py-12 px-1 sm:px-6 md:px-12 lg:p-16 text-center space-y-16"
       >
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-white">Portfolio</h2>
@@ -94,7 +94,7 @@ export default function Home() {
             A selection of recent projects I'm proud of
           </h3>
         </div>
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 gap-16">
           {projectData.map((project, index) => (
             <ProjectBox
               key={index}

@@ -1,17 +1,76 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import { ProjectContentProps } from "./projectData";
 
 const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
   return (
-    <Fragment>
-      <h4 style={{ color }}>
-        Are you a <i>riskophobe</i>?
-      </h4>
-      Fully designed and developed a platform for crypto users to trade tokens
-      with flexibility and reclaim collateral, enhancing risk management. Smart
-      contracts in Solidity with hardhat, Subgraph GraphQL, Frontend in Next.js
-      with Wagmi and TailwindCSS.
-    </Fragment>
+    <div className="text-start space-y-6 font-medium">
+      <div>
+        <h4 style={{ color }} className="text-lg font-bold">
+          Are you a <i>riskophobe</i>?
+        </h4>
+        <p>
+          Then this dApp is for you! Simply put, Riskophobe allows you to buy a
+          token with the ability to return it and get your money back, within a
+          certain timeframe. That way, you'll sleep better at night.
+        </p>
+      </div>
+      <div>
+        <h4 style={{ color }} className="text-lg font-bold">
+          The Stack
+        </h4>
+        <ul className="list-disc list-inside">
+          <li>
+            👀 Frontend:{" "}
+            <span className="font-bold">Next.js + TailwindCSS + Wagmi</span>
+          </li>
+          <li>
+            🍑 Backend: <span className="font-bold">GraphQL</span>
+          </li>
+          <li>
+            🧠 Smart contracts:{" "}
+            <span className="font-bold">Solidity + Hardhat</span>
+          </li>
+        </ul>
+      </div>
+      <p>
+        The best part? It's 100% made by Benjamin Azoulay (your humble servant),
+        and 100% open-source.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-start lg:justify-items-center">
+        <a
+          className="bullet-link"
+          href="https://riskophobe.com"
+          target="_blank"
+        >
+          <span>🌐</span>
+          <span className="label">Visit Riskophobe.com</span>
+        </a>
+        <a
+          className="bullet-link"
+          href="https://github.com/BenAzlay/riskophobe-frontend"
+          target="_blank"
+        >
+          <span>👀</span>
+          <span className="label">Fontend code</span>
+        </a>
+        <a
+          className="bullet-link"
+          href="https://github.com/BenAzlay/riskophobe-contracts"
+          target="_blank"
+        >
+          <span>🧠</span>
+          <span className="label">Contracts code</span>
+        </a>
+        <a
+          className="bullet-link"
+          href="https://github.com/BenAzlay/riskophobe-backend"
+          target="_blank"
+        >
+          <span>🍑</span>
+          <span className="label">Backend code</span>
+        </a>
+      </div>
+    </div>
   );
 };
 
