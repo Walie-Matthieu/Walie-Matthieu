@@ -16,19 +16,18 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
       initial={{ marginTop: 0, marginBottom: 0 }}
       whileHover={{ marginTop: 48, marginBottom: 48 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="relative group dark-glass shadow-lg rounded-lg p-6 text-center dark-glass border-t-2 border-l-2 border-r-2"
-      style={{ "--glow-color": color, borderColor: color } as CSSProperties}
+      className="relative group dark-glass rounded-lg p-6 text-center dark-glass border-2 pb-16"
+      style={{ borderColor: color }}
     >
       {/* Logo Container */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 -top-12 rounded-full flex items-center justify-center shadow-md neon-logo"
-        style={
-          {
-            width: 96,
-            height: 96,
-            "--glow-color": color,
-          } as CSSProperties
-        }
+        className="absolute left-1/2 -translate-x-1/2 -top-12 flex items-center justify-center shadow-md border-2"
+        style={{
+          width: 96,
+          height: 96,
+          borderRadius: "48px",
+          borderColor: color,
+        }}
       >
         <Image
           src={image}
@@ -49,16 +48,17 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
 
       {/* Semi-Circular Cutout */}
       <div
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 bg-gray-800"
+        className="absolute left-1/2 -translate-x-1/2 bg-gray-800"
         style={{
           width: 96,
           height: 48,
           borderRadius: "48px 48px 0 0",
-          borderTop: "2px solid" + color,
-          borderRight: "2px solid" + color,
-          borderLeft: "2px solid" + color,
+          borderTop: `2px solid ${color}`,
+          borderRight: `2px solid ${color}`,
+          borderLeft: `2px solid ${color}`,
+          bottom: "-2px",
         }}
-      ></div>
+      />
     </motion.div>
   );
 };
