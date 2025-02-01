@@ -1,11 +1,15 @@
 import { FC, ReactNode } from "react";
 import RiskophobeProject from "./RiskophobeProject";
 
+export interface ProjectContentProps {
+  color: string;
+}
+
 interface Project {
   title: string;
   color: string;
   logo: string;
-  content: FC;
+  content: FC<ProjectContentProps>;
   link: string;
 }
 

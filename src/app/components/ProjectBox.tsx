@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { FC, ReactNode } from "react";
+import { ProjectContentProps } from "../projects/projectData";
 
 interface ProjectBoxProps {
   title: string;
   image: string;
   color: string;
-  Content: FC;
+  Content: FC<ProjectContentProps>;
 }
 
 const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
@@ -31,7 +32,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
         <h3 className="text-2xl font-semibold" style={{ color }}>
           {title}
         </h3>
-        <Content />
+        <Content color={color} />
       </div>
     </div>
   );

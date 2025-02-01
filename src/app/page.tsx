@@ -94,7 +94,7 @@ export default function Home() {
             A selection of recent projects I'm proud of
           </h3>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1">
           {projectData.map((project, index) => (
             <ProjectBox
               key={index}
