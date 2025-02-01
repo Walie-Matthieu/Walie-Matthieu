@@ -33,10 +33,12 @@ const FlashstakeProject: FC<ProjectContentProps> = ({ color }) => {
           </li>
         </ul>
       </div>
+      <div className="text-center">
       <a className="bullet-link" href="https://flashstake.io" target="_blank">
         <span>🌐</span>
         <span className="label">Visit Flashstake.io</span>
       </a>
+      </div>
     </div>
   );
 };
