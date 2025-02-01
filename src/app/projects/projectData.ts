@@ -1,5 +1,6 @@
 import { FC } from "react";
 import RiskophobeProject from "./RiskophobeProject";
+import FlashstakeProject from "./FlashstakeProject";
 
 export interface ProjectContentProps {
   color: string;
@@ -24,7 +25,7 @@ const projectData: Project[] = [
   {
     title: "Flashstake",
     logo: "/logos/Flashstake.png",
-    content: RiskophobeProject,
+    content: FlashstakeProject,
     link: "https://flashstake.io/",
     color: "#FE0094",
   },
