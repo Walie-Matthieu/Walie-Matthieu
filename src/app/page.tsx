@@ -1,17 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 import ProjectBox from "./components/ProjectBox";
 import ScrollWidget from "./components/ScrollWidget";
-
-interface Project {
-  title: string;
-  color: string;
-  logo: string;
-  content: ReactNode;
-  link: string;
-}
+import projectData from "./projects/projectData";
 
 export default function Home() {
   const projectsSectionRef = useRef<HTMLDivElement>(null);
@@ -98,16 +91,15 @@ export default function Home() {
           </h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ProjectBox
-            title="Riskophobe"
-            image="/logos/Riskophobe.png"
-            color="#6B46C1"
-          >
-            Fully designed and developed a platform for crypto users to trade
-            tokens with flexibility and reclaim collateral, enhancing risk
-            management. Smart contracts in Solidity with hardhat, Subgraph
-            GraphQL, Frontend in Next.js with Wagmi and TailwindCSS.
-          </ProjectBox>
+          {projectData.map((project, index) => (
+            <ProjectBox
+              key={index}
+              title={project.title}
+              image={project.logo}
+              color={project.color}
+              Content={project.content}
+            />
+          ))}
         </div>
       </div>
     );

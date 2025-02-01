@@ -5,10 +5,10 @@ interface ProjectBoxProps {
   title: string;
   image: string;
   color: string;
-  children: ReactNode;
+  Content: FC;
 }
 
-const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, children }) => {
+const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
   return (
     <div
       className="relative bg-white shadow-lg rounded-lg p-6 text-center border-2"
@@ -31,7 +31,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, children }) => {
         <h3 className="text-2xl font-semibold" style={{ color }}>
           {title}
         </h3>
-        <div className="mt-2 text-gray-600">{children}</div>
+        <Content />
       </div>
     </div>
   );
