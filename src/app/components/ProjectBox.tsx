@@ -26,25 +26,10 @@ const ProjectBox: FC<ProjectBoxProps> = ({
   const isFirst: boolean = index > 0;
   const isLast: boolean = index < projectData.length - 1;
 
-  const [isDragging, setIsDragging] = useState(false);
-
   return (
     <motion.div
       layout // Ensures smooth animations during reorder
       dragElastic={0.2} // Adds natural resistance
-      onHoverStart={() => {
-        setIsDragging(true);
-      }} // Mark as dragging when it starts
-      onLayoutAnimationComplete={() => {
-        setIsDragging(false);
-      }} // Reset after dragging ends
-      onHoverEnd={() => {
-        setIsDragging(false);
-      }} // Reset after dragging ends
-      whileHover={{
-        marginTop: isFirst && isDragging ? 32 : 0,
-        marginBottom: isLast && isDragging ? 32 : 0,
-      }} // Disable hover effect when dragging
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="relative p-6 text-center dark-glass border-2 pb-16 cursor-grab active:cursor-grabbing"
       style={{
