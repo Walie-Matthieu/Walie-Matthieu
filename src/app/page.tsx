@@ -18,7 +18,7 @@ export default function Home() {
   const introSection = () => (
     <div
       id="intro-section"
-      className="min-h-screen flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-red-900 to-gray-800 "
+      className="min-h-screen px-4 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-red-900 to-gray-800 "
     >
       <div className="relative w-48 h-48">
         <Image
@@ -44,7 +44,7 @@ export default function Home() {
           A bird, a plane, a Web3 Full-Stack Engineer? Let&lsquo;s find out!
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-3 sm:gap-8 justify-items-center font-medium sm:text-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 justify-items-center font-medium text-lg">
         <a
           className="bullet-link"
           href="https://github.com/BenAzlay"
