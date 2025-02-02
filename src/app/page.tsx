@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import ProjectBox from "./components/ProjectBox";
-import projectData from "./projects/projectData";
 import dynamic from "next/dynamic";
 import ProjectList from "./projects/ProjectList";
 import EmailButton from "./components/EmailButton";
@@ -41,7 +39,7 @@ export default function Home() {
           WTF is Benjamin Azoulay?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
-          A bird, a plane, a Full-Stack Web3 Engineer? Let's find out!
+          A bird, a plane, a Full-Stack Web3 Engineer? Let&lsquo;s find out!
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-3 sm:gap-8 justify-items-center font-medium sm:text-lg">
@@ -93,7 +91,7 @@ export default function Home() {
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-white">Portfolio</h2>
           <h3 className="text-gray-300 font-semibold">
-            A selection of recent projects I'm proud of
+            A selection of recent projects I&lsquo;m proud of
           </h3>
         </div>
         <ProjectList />

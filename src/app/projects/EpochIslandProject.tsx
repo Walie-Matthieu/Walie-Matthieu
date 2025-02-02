@@ -14,7 +14,7 @@ const EpochIslandProject: FC<ProjectContentProps> = ({ color }) => {
             Built <span className="font-bold">Fundr</span>, a decentralized
             application to fund builders through staking.
           </li>
-          <li>Launched the world's first Initial Time Offering (ITO)</li>
+          <li>Launched the world&lsquo;s first Initial Time Offering (ITO)</li>
         </ul>
       </div>
       <div className="text-center">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, Reorder } from "framer-motion";
+import { Reorder } from "framer-motion";
 import ProjectBox from "../components/ProjectBox";
 import projectData from "../projects/projectData";
 

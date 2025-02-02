@@ -1,10 +1,7 @@
 import Image from "next/image";
-import { CSSProperties, FC, useState } from "react";
+import { FC } from "react";
 import {
-  motion,
-  useDragControls,
-  useMotionValue,
-  useTransform,
+  motion
 } from "framer-motion";
 import projectData, { ProjectContentProps } from "../projects/projectData";
 

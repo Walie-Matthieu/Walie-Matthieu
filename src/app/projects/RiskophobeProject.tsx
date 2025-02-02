@@ -11,7 +11,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         <p>
           Then this dApp is for you! Simply put, Riskophobe allows you to buy a
           token with the ability to return it and get your money back, within a
-          certain timeframe. That way, you'll sleep better at night.
+          certain timeframe. That way, you&lsquo;ll sleep better at night.
         </p>
       </div>
       <div>
@@ -33,7 +33,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </ul>
       </div>
       <p>
-        The best part? It's 100% made by Benjamin Azoulay (your humble servant),
+        The best part? It&lsquo;s 100% made by Benjamin Azoulay (your humble servant),
         and 100% open-source.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-start lg:justify-items-center">
