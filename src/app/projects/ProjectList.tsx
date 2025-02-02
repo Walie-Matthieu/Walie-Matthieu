@@ -9,7 +9,7 @@ const ProjectList = () => {
   const [projects, setProjects] = useState(projectData);
 
   return (
-    <Reorder.Group axis={"y"} values={projects} onReorder={setProjects}>
+    <Reorder.Group axis={"y"} values={projects} onReorder={setProjects} className="justify-self-center">
       {projects.map((project, index) => (
         <Reorder.Item
           drag={!isMobile}

@@ -28,7 +28,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({
       layout // Ensures smooth animations during reorder
       dragElastic={0.2} // Adds natural resistance
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="relative p-6 text-center dark-glass border-2 pb-16 cursor-grab active:cursor-grabbing"
+      className="relative p-6 text-center dark-glass border-2 pb-16 cursor-grab active:cursor-grabbing max-w-6xl"
       style={{
         borderColor: color,
         borderTopLeftRadius: !isFirst ? 8 : 0,
@@ -57,7 +57,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({
       </div>
 
       {/* Box Content */}
-      <div className="mt-8 text-gray-100">
+      <div className="mt-8 text-gray-100 text-base sm:text-lg">
         <h3 className="text-2xl font-semibold" style={{ color }}>
           {title}
         </h3>

@@ -3,9 +3,9 @@ import { ProjectContentProps } from "./projectData";
 
 const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
   return (
-    <div className="text-start space-y-6 font-medium">
+    <div className="text-start space-y-6 font-medium text-inherit">
       <div>
-        <h4 style={{ color }} className="text-lg font-bold">
+        <h4 style={{ color }} className="box-section-title">
           Are you a <i>riskophobe</i>?
         </h4>
         <p>
@@ -15,7 +15,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </p>
       </div>
       <div>
-        <h4 style={{ color }} className="text-lg font-bold">
+        <h4 style={{ color }} className="box-section-title">
           The Stack
         </h4>
         <ul className="list-disc list-inside">

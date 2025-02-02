@@ -58,3 +58,7 @@ button {
 .dark-glass:hover > .neon-logo {
   box-shadow: 0 0 15px var(--glow-color);
 }
+
+.box-section-title {
+  @apply font-bold text-lg sm:text-xl;
+}

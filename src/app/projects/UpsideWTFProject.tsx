@@ -5,7 +5,7 @@ const UpsideWTFProject: FC<ProjectContentProps> = ({ color }) => {
   return (
     <div className="text-start space-y-6 font-medium">
       <div>
-        <h4 style={{ color }} className="text-lg font-bold">
+        <h4 style={{ color }} className="box-section-title">
           The Stock Market of X
         </h4>
         <p>
@@ -15,7 +15,7 @@ const UpsideWTFProject: FC<ProjectContentProps> = ({ color }) => {
       </div>
       <p>🚀 Upside is currently still in its private beta launching phase.</p>
       <div>
-        <h4 style={{ color }} className="text-lg font-bold">
+        <h4 style={{ color }} className="box-section-title">
           UpStack
         </h4>
         <ul className="list-disc list-inside">
