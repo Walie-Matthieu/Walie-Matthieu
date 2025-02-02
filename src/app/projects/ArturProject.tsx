@@ -30,9 +30,9 @@ const ArturProject: FC<ProjectContentProps> = ({ color }) => {
         </ul>
       </div>
       <div className="text-center">
-        <a className="bullet-link" href="https://artur.ai.io" target="_blank">
+        <a className="bullet-link" href="https://artur.ai" target="_blank">
           <span>🌐</span>
-          <span className="label">Visit Artur.ai.io</span>
+          <span className="label">Visit Artur.ai</span>
         </a>
       </div>
     </div>
