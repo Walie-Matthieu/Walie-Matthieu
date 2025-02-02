@@ -6,6 +6,7 @@ import ProjectBox from "./components/ProjectBox";
 import projectData from "./projects/projectData";
 import dynamic from "next/dynamic";
 import ProjectList from "./projects/ProjectList";
+import EmailButton from "./components/EmailButton";
 
 const ScrollWidget = dynamic(() => import("./components/ScrollWidget"), {
   ssr: false,
@@ -100,10 +101,19 @@ export default function Home() {
     );
   };
 
+  const footer = () => (
+    <div className="bg-red-900 rounded-t-2xl p-6 text-center space-y-4 z-50 gap-2 flex flex-col items-center sticky">
+      <p className="text-xl font-bold -mb-4">Interested in working together?</p>
+      <EmailButton />
+      <p>Copyright © Benjamin Azoulay 2025</p>
+    </div>
+  );
+
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen text-white bg-gray-800">
       {introSection()}
       {projectsSection()}
+      {footer()}
     </main>
   );
 }
