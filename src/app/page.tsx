@@ -5,6 +5,7 @@ import { useRef } from "react";
 import ProjectBox from "./components/ProjectBox";
 import projectData from "./projects/projectData";
 import dynamic from "next/dynamic";
+import ProjectList from "./projects/ProjectList";
 
 const ScrollWidget = dynamic(() => import("./components/ScrollWidget"), {
   ssr: false,
@@ -94,18 +95,7 @@ export default function Home() {
             A selection of recent projects I'm proud of
           </h3>
         </div>
-        <div className="grid grid-cols-1">
-          {projectData.map((project, index) => (
-            <ProjectBox
-              key={index}
-              index={index}
-              title={project.title}
-              image={project.logo}
-              color={project.color}
-              Content={project.content}
-            />
-          ))}
-        </div>
+        <ProjectList />
       </div>
     );
   };

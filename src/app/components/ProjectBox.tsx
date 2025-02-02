@@ -1,7 +1,12 @@
 import Image from "next/image";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, FC, useState } from "react";
+import {
+  motion,
+  useDragControls,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import projectData, { ProjectContentProps } from "../projects/projectData";
-import { motion } from "framer-motion";
 
 interface ProjectBoxProps {
   title: string;
@@ -20,15 +25,28 @@ const ProjectBox: FC<ProjectBoxProps> = ({
 }) => {
   const isFirst: boolean = index > 0;
   const isLast: boolean = index < projectData.length - 1;
+
+  const [isDragging, setIsDragging] = useState(false);
+
   return (
     <motion.div
-      initial={{ marginTop: 0, marginBottom: 0 }}
+      layout // Ensures smooth animations during reorder
+      dragElastic={0.2} // Adds natural resistance
+      onHoverStart={() => {
+        setIsDragging(true);
+      }} // Mark as dragging when it starts
+      onLayoutAnimationComplete={() => {
+        setIsDragging(false);
+      }} // Reset after dragging ends
+      onHoverEnd={() => {
+        setIsDragging(false);
+      }} // Reset after dragging ends
       whileHover={{
-        marginTop: isFirst ? 48 : 0,
-        marginBottom: isLast ? 48 : 0,
-      }}
+        marginTop: isFirst && isDragging ? 32 : 0,
+        marginBottom: isLast && isDragging ? 32 : 0,
+      }} // Disable hover effect when dragging
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="relative p-6 text-center dark-glass border-2 pb-16"
+      className="relative p-6 text-center dark-glass border-2 pb-16 cursor-grab active:cursor-grabbing"
       style={{
         borderColor: color,
         borderTopLeftRadius: !isFirst ? 8 : 0,
