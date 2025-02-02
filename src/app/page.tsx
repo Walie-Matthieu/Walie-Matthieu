@@ -5,12 +5,14 @@ import { useRef } from "react";
 import dynamic from "next/dynamic";
 import ProjectList from "./projects/ProjectList";
 import EmailButton from "./components/EmailButton";
+import useIsMobile from "./useIsMobile";
 
 const ScrollWidget = dynamic(() => import("./components/ScrollWidget"), {
   ssr: false,
 });
 
 export default function Home() {
+  const isMobile = useIsMobile();
   const projectsSectionRef = useRef<HTMLDivElement>(null);
 
   const introSection = () => (
@@ -93,6 +95,7 @@ export default function Home() {
           <h3 className="text-gray-300 font-semibold">
             A selection of recent projects I&lsquo;m proud of
           </h3>
+          {!isMobile ? <h6 className="text-gray-400 font-light">Pro tip: you can reorder them!</h6> : null}
         </div>
         <ProjectList />
       </div>
