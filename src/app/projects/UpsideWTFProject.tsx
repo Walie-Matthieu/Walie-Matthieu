@@ -6,27 +6,28 @@ const UpsideWTFProject: FC<ProjectContentProps> = ({ color }) => {
     <div className="text-start space-y-6 font-medium">
       <div>
         <h4 style={{ color }} className="text-lg font-bold">
-          Decentralized Social Finance Platform
+          The Stock Market of X
         </h4>
         <p>
-          Upside.wtf is an innovative platform that redefines social finance by
-          enabling users to invest, trade, and interact in a decentralized and
-          community-driven ecosystem powered by blockchain technology.
+          Upside is a dApp to tokenize tweets and bet on bangers. It is like a
+          blend between pump.fun, Reddit, and Polymarket.
         </p>
       </div>
+      <p>🚀 Upside is currently still in its private beta launching phase.</p>
       <div>
         <h4 style={{ color }} className="text-lg font-bold">
-          Stack.ai
+          UpStack
         </h4>
         <ul className="list-disc list-inside">
           <li>
-            📱 Frontend: <span className="font-bold">React.js + Next.js</span>
+            📱 Frontend:{" "}
+            <span className="font-bold">React.js + MaterialUI</span>
           </li>
           <li>
-            ⚙️ Backend: <span className="font-bold">Node.js + PostgreSQL</span>
+            ⚙️ Backend: <span className="font-bold">GraphQL</span>
           </li>
           <li>
-            🔗 Blockchain: <span className="font-bold">Solana + IPFS</span>
+            🔗 Blockchain: <span className="font-bold">Solidity + Hardhat</span>
           </li>
         </ul>
       </div>
