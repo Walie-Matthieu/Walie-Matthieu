@@ -98,6 +98,7 @@ export default function Home() {
           {projectData.map((project, index) => (
             <ProjectBox
               key={index}
+              index={index}
               title={project.title}
               image={project.logo}
               color={project.color}

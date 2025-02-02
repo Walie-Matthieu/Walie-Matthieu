@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CSSProperties, FC } from "react";
-import { ProjectContentProps } from "../projects/projectData";
+import projectData, { ProjectContentProps } from "../projects/projectData";
 import { motion } from "framer-motion";
 
 interface ProjectBoxProps {
@@ -8,16 +8,34 @@ interface ProjectBoxProps {
   image: string;
   color: string;
   Content: FC<ProjectContentProps>;
+  index: number;
 }
 
-const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
+const ProjectBox: FC<ProjectBoxProps> = ({
+  index,
+  title,
+  image,
+  color,
+  Content,
+}) => {
+  const isFirst: boolean = index > 0;
+  const isLast: boolean = index < projectData.length - 1;
   return (
     <motion.div
       initial={{ marginTop: 0, marginBottom: 0 }}
-      whileHover={{ marginTop: 48, marginBottom: 48 }}
+      whileHover={{
+        marginTop: isFirst ? 48 : 0,
+        marginBottom: isLast ? 48 : 0,
+      }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="relative group dark-glass rounded-lg p-6 text-center dark-glass border-2 pb-16"
-      style={{ borderColor: color }}
+      className="relative p-6 text-center dark-glass border-2 pb-16"
+      style={{
+        borderColor: color,
+        borderTopLeftRadius: !isFirst ? 8 : 0,
+        borderTopRightRadius: !isFirst ? 8 : 0,
+        borderBottomLeftRadius: !isLast ? 8 : 0,
+        borderBottomRightRadius: !isLast ? 8 : 0,
+      }}
     >
       {/* Logo Container */}
       <div
@@ -50,7 +68,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({ title, image, color, Content }) => {
       <div
         className="absolute left-1/2 -translate-x-1/2 bg-gray-800"
         style={{
-          width: 96,
+          width: 98,
           height: 48,
           borderRadius: "48px 48px 0 0",
           borderTop: `2px solid ${color}`,
