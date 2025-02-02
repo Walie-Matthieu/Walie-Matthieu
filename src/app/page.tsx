@@ -39,7 +39,7 @@ export default function Home() {
           WTF is Benjamin Azoulay?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
-          A bird, a plane, a Full-Stack Web3 Engineer? Let&lsquo;s find out!
+          A bird, a plane, a Web3 Full-Stack Engineer? Let&lsquo;s find out!
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-3 sm:gap-8 justify-items-center font-medium sm:text-lg">
