@@ -20,14 +20,15 @@ const UpsideWTFProject: FC<ProjectContentProps> = ({ color }) => {
         </h4>
         <ul className="list-disc list-inside">
           <li>
-            📱 Frontend:{" "}
+            🎮 Frontend:{" "}
             <span className="font-bold">React.js + MaterialUI</span>
           </li>
           <li>
-            ⚙️ Backend: <span className="font-bold">GraphQL</span>
+            🍑 Backend: <span className="font-bold">GraphQL</span>
           </li>
           <li>
-            🔗 Blockchain: <span className="font-bold">Solidity + Hardhat</span>
+            🧠 Smart contracts:{" "}
+            <span className="font-bold">Solidity + Hardhat</span>
           </li>
         </ul>
       </div>

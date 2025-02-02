@@ -20,7 +20,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </h4>
         <ul className="list-disc list-inside">
           <li>
-            👀 Frontend:{" "}
+            🎮 Frontend:{" "}
             <span className="font-bold">Next.js + TailwindCSS + Wagmi</span>
           </li>
           <li>
@@ -33,8 +33,8 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </ul>
       </div>
       <p>
-        The best part? It&lsquo;s 100% made by Benjamin Azoulay (your humble servant),
-        and 100% open-source.
+        The best part? It&lsquo;s 100% made by Benjamin Azoulay (your humble
+        servant), and 100% open-source.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-start lg:justify-items-center">
         <a

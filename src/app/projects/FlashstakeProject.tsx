@@ -21,7 +21,7 @@ const FlashstakeProject: FC<ProjectContentProps> = ({ color }) => {
         </h4>
         <ul className="list-disc list-inside">
           <li>
-            👀 Frontend:{" "}
+            🎮 Frontend:{" "}
             <span className="font-bold">React.js + MaterialUI + Web3Auth</span>
           </li>
           <li>
@@ -34,10 +34,10 @@ const FlashstakeProject: FC<ProjectContentProps> = ({ color }) => {
         </ul>
       </div>
       <div className="text-center">
-      <a className="bullet-link" href="https://flashstake.io" target="_blank">
-        <span>🌐</span>
-        <span className="label">Visit Flashstake.io</span>
-      </a>
+        <a className="bullet-link" href="https://flashstake.io" target="_blank">
+          <span>🌐</span>
+          <span className="label">Visit Flashstake.io</span>
+        </a>
       </div>
     </div>
   );

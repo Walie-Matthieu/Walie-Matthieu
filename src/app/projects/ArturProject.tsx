@@ -21,7 +21,7 @@ const ArturProject: FC<ProjectContentProps> = ({ color }) => {
         </h4>
         <ul className="list-disc list-inside">
           <li>
-            👀 Frontend:{" "}
+            🎮 Frontend:{" "}
             <span className="font-bold">React.js + TailwindCSS</span>
           </li>
           <li>

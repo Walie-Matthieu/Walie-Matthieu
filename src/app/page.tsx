@@ -95,7 +95,7 @@ export default function Home() {
           <h3 className="text-gray-300 font-semibold">
             A selection of recent projects I&lsquo;m proud of
           </h3>
-          {!isMobile ? <h6 className="text-gray-400 font-light">Pro tip: you can reorder them!</h6> : null}
+          {!isMobile ? <h6 className="text-gray-400 font-light">👀 Pro tip: you can reorder them!</h6> : null}
         </div>
         <ProjectList />
       </div>
