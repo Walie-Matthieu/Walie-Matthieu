@@ -9,13 +9,26 @@ const ProjectList = () => {
   const [projects, setProjects] = useState(projectData);
 
   return (
-    <Reorder.Group axis={"y"} values={projects} onReorder={setProjects} className="justify-self-center">
-      {projects.map((project, index) => (
+    <Reorder.Group
+      axis={"y"}
+      values={projects}
+      onReorder={setProjects}
+      className="justify-self-center"
+    >
+      {projects.map((project, index, self) => (
         <Reorder.Item
           drag={!isMobile}
           key={project.title}
           value={project}
           className="cursor-grab active:cursor-grabbing"
+          whileTap={
+            isMobile
+              ? {
+                  marginTop: index > 0 ? 32 : 0,
+                  marginBottom: index < self.length - 1 ? 32 : 0,
+                }
+              : {}
+          }
         >
           <ProjectBox
             key={project.title}
