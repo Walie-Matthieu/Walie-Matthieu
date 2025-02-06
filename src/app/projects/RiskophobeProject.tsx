@@ -33,8 +33,8 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </ul>
       </div>
       <p>
-        The best part? It&lsquo;s 100% made by Benjamin Azoulay (your humble
-        servant), and 100% open-source.
+        The best part? It&lsquo;s <b>100% made by Benjamin Azoulay</b> (your
+        humble servant), and <b>100% open-source</b> 🤗
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-start lg:justify-items-center">
         <a

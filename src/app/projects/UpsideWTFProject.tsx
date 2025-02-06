@@ -12,8 +12,8 @@ const UpsideWTFProject: FC<ProjectContentProps> = ({ color }) => {
           Upside is a dApp to tokenize tweets and bet on bangers. It is like a
           blend between pump.fun, Reddit, and Polymarket.
         </p>
+        <p>The dApp is currently still in its private beta launching phase 🚀</p>
       </div>
-      <p>🚀 Upside is currently still in its private beta launching phase.</p>
       <div>
         <h4 style={{ color }} className="box-section-title">
           UpStack

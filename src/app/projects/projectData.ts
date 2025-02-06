@@ -28,21 +28,24 @@ const projectData: Project[] = [
     logo: "/logos/Flashstake.png",
     content: FlashstakeProject,
     color: "#FE0094",
-  },{
-    title: "Artur.ai",
-    logo: "/logos/Artur.png",
-    content: ArturProject,
-    color: "#3C6AF6",
-  },{
-    title: "Upside",
-    logo: "/logos/Upside.png",
-    content: UpsideWTFProject,
-    color: "rgb(149, 255, 217)",
-  },{
+  },
+  {
     title: "EpochIsland",
     logo: "/logos/Epoch.png",
     content: EpochIslandProject,
     color: "#F1F1F1",
+  },
+  {
+    title: "Artur.ai",
+    logo: "/logos/Artur.png",
+    content: ArturProject,
+    color: "#3C6AF6",
+  },
+  {
+    title: "Upside",
+    logo: "/logos/Upside.png",
+    content: UpsideWTFProject,
+    color: "rgb(149, 255, 217)",
   },
 ];
 

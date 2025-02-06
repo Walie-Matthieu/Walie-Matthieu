@@ -9,12 +9,20 @@ const EpochIslandProject: FC<ProjectContentProps> = ({ color }) => {
           The Onchain Silicon Valley
         </h4>
         <ul className="list-disc list-inside">
-          <li>Contributed to the Epoch DAO, the first Network State.</li>
           <li>
-            Built <span className="font-bold">Fundr</span>, a decentralized
-            application to fund builders through staking.
+            Contributed to the Epoch DAO, aiming to create a Network State 🗿
           </li>
-          <li>Launched the world&lsquo;s first Initial Time Offering (ITO)</li>
+          <li>
+            Launched the world&lsquo;s first Initial Time Offering (ITO),{" "}
+            <b>raising $100k/hour</b> on its first and second phases 📈
+          </li>
+          <li>
+            DAO reached over <b>$7M market cap</b> 🚀
+          </li>
+          <li>
+            Built <i>Fundr</i>, a decentralized application to fund builders
+            through staking 💫
+          </li>
         </ul>
       </div>
       <div className="text-center">

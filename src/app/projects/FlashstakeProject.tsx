@@ -9,10 +9,15 @@ const FlashstakeProject: FC<ProjectContentProps> = ({ color }) => {
           Instant Upfront Yield
         </h4>
         <p>
-          Flashstake is a revolutionary DeFi protocol that lets you &quot;time
-          travel&quot; your yield, instantly earning rewards upfront instead of
-          waiting, turning future returns into immediate liquidity with zero
-          delay!
+          Flashstake is a staking protocol that lets you &quot;time
+          travel&quot; your yield, instantly earning rewards upfront with fixed
+          yield ⚡
+        </p>
+        <p>
+          Reached over <b>$40M market cap</b> and <b>$20M TVL</b> 🤯
+        </p>
+        <p>
+          Offered up to <b>90% staking APY</b> 🤑
         </p>
       </div>
       <div>
