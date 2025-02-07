@@ -38,7 +38,7 @@ export default function Home() {
       </div>
       <div className="justify-items-center space-y-4">
         <h1 className="text-2xl sm:text-5xl font-bold text-white">
-          WTF is Benjamin Azoulay?
+          Who is Benjamin Azoulay?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
           A bird, a plane, a Web3 Full-Stack Engineer? Let&lsquo;s find out!
