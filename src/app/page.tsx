@@ -18,22 +18,15 @@ export default function Home() {
   const introSection = () => (
     <div
       id="intro-section"
-      className="min-h-screen px-4 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-red-900 to-gray-800 "
+      className="min-h-screen px-4 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-blue-900 to-gray-800 "
     >
       <div className="relative w-48 h-48">
         <Image
-          src="/PFP.jpg"
+          src="/aigle.jpg"
           alt="PFP"
           fill
           objectFit="cover"
-          className="rounded-full transition-opacity duration-500 hover:opacity-0"
-        />
-        <Image
-          src="/PFP_Laser.png"
-          alt="PFP Hover"
-          fill
-          objectFit="cover"
-          className="rounded-full absolute top-0 left-0 opacity-0 transition-opacity duration-500 hover:opacity-100"
+          className="rounded-full"
         />
       </div>
       <div className="justify-items-center space-y-4">
@@ -41,13 +34,13 @@ export default function Home() {
           Who is Walie Matthieu?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
-          A bird, a plane, a Web3 Full-Stack Engineer? Let&lsquo;s find out!
+          A bird, a plane, a Web Dev? Let&lsquo;s find out!
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 justify-items-center font-medium text-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 justify-items-center font-medium text-lg">
         <a
           className="bullet-link"
-          href="https://github.com/BenAzlay"
+          href="https://github.com/Walie-Matthieu"
           target="_blank"
         >
           <Image src="/logos/Github.png" alt="Github" width={24} height={24} />
@@ -55,7 +48,7 @@ export default function Home() {
         </a>
         <a
           className="bullet-link"
-          href="https://www.linkedin.com/in/benjaminazoulay1"
+          href="https://www.linkedin.com/in/walie-matthieu/"
           target="_blank"
         >
           <Image
@@ -66,21 +59,8 @@ export default function Home() {
           />
           <span className="label">LinkedIn</span>
         </a>
-        <a
-          className="bullet-link"
-          href="https://blog.benjaminazoulay.com/"
-          target="_blank"
-        >
-          <Image
-            src="/logos/Hashnode.png"
-            alt="Hashnode"
-            width={24}
-            height={24}
-          />{" "}
-          <span className="label">Tutorials</span>
-        </a>
       </div>
-      <ScrollWidget projectsSectionRef={projectsSectionRef} />
+      {/* <ScrollWidget projectsSectionRef={projectsSectionRef} /> */}
     </div>
   );
 
@@ -113,8 +93,8 @@ export default function Home() {
   return (
     <main className="min-h-screen text-white bg-gray-800">
       {introSection()}
-      {projectsSection()}
-      {footer()}
+      {/* {projectsSection()} */}
+      {/* {footer()} */}
     </main>
   );
 }
