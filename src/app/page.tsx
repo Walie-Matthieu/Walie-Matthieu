@@ -38,7 +38,7 @@ export default function Home() {
       </div>
       <div className="justify-items-center space-y-4">
         <h1 className="text-2xl sm:text-5xl font-bold text-white">
-          Who is Benjamin Azoulay?
+          Who is Walie Matthieu?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
           A bird, a plane, a Web3 Full-Stack Engineer? Let&lsquo;s find out!
@@ -106,7 +106,7 @@ export default function Home() {
     <div className="bg-red-900 rounded-t-2xl p-6 text-center space-y-4 z-50 gap-2 flex flex-col items-center sticky">
       <p className="text-xl font-bold -mb-4">Interested in working together?</p>
       <EmailButton />
-      <p>Copyright © Benjamin Azoulay 2025</p>
+      <p>Copyright © Walie Matthieu 2025</p>
     </div>
   );
 

@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Benjamin Azoulay | Web3 Full-Stack Engineer",
-  description: "Benjamin Azoulay is a Frontend, Backend and Blockchain Developer",
+  title: "Walie Matthieu | Web3 Full-Stack Engineer",
+  description: "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
   keywords:
-    "Benjamin Azoulay, web3 developer, full-stack, web3, engineer, ethereum developer",
+    "Walie Matthieu, web3 developer, full-stack, web3, engineer, ethereum developer",
   metadataBase: new URL("https://benjaminazoulay.com"),
   openGraph: {
-    title: "Benjamin Azoulay | Web3 Full-Stack Engineer",
+    title: "Walie Matthieu | Web3 Full-Stack Engineer",
     description:
-      "Benjamin Azoulay is a Frontend, Backend and Blockchain Developer",
+      "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
     url: "https://benjaminazoulay.com",
     siteName: "BenjaminAzoulay",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Benjamin Azoulay",
+        alt: "Walie Matthieu",
       },
     ],
     locale: "en_US",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@BenAzlay",
-    title: "Benjamin Azoulay | Web3 Full-Stack Engineer",
+    title: "Walie Matthieu | Web3 Full-Stack Engineer",
     description:
-      "Benjamin Azoulay is a Frontend, Backend and Blockchain Developer",
+      "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
     images: ["/og-image.png"],
   },
   robots: "index, follow",
@@ -49,10 +49,10 @@ export const metadata: Metadata = {
     apple: "/icons/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  creator: "Benjamin Azoulay",
-  applicationName: "Benjamin Azoulay",
+  creator: "Walie Matthieu",
+  applicationName: "Walie Matthieu",
   generator: "Next.js",
-  publisher: "Benjamin Azoulay",
+  publisher: "Walie Matthieu",
   category: "Finance, Decentralized Finance, Web3",
 };
 
