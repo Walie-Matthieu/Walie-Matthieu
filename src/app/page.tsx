@@ -34,7 +34,7 @@ export default function Home() {
           Who is Walie Matthieu?
         </h1>
         <h2 className=" text-gray-200 font-semibold max-w-lg">
-          A bird, a plane, a Web Dev? Let&lsquo;s find out!
+          Chasing big ideas through humble lines of code.
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 justify-items-center font-medium text-lg">
