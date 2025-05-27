@@ -47,7 +47,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </a>
         <a
           className="bullet-link"
-          href="https://github.com/BenAzlay/riskophobe-frontend"
+          href="https://github.com/WalieMatthieu/riskophobe-frontend"
           target="_blank"
         >
           <span>👀</span>
@@ -55,7 +55,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </a>
         <a
           className="bullet-link"
-          href="https://github.com/BenAzlay/riskophobe-contracts"
+          href="https://github.com/WalieMatthieu/riskophobe-contracts"
           target="_blank"
         >
           <span>🧠</span>
@@ -63,7 +63,7 @@ const RiskophobeProject: FC<ProjectContentProps> = ({ color }) => {
         </a>
         <a
           className="bullet-link"
-          href="https://github.com/BenAzlay/riskophobe-backend"
+          href="https://github.com/WalieMatthieu/riskophobe-backend"
           target="_blank"
         >
           <span>🍑</span>

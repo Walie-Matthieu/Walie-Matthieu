@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description: "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
   keywords:
     "Walie Matthieu, web3 developer, full-stack, web3, engineer, ethereum developer",
-  metadataBase: new URL("https://benjaminazoulay.com"),
+  metadataBase: new URL("https://waliematthieu.com"),
   openGraph: {
     title: "Walie Matthieu | Web3 Full-Stack Engineer",
     description:
       "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
-    url: "https://benjaminazoulay.com",
-    siteName: "BenjaminAzoulay",
+    url: "https://waliematthieu.com",
+    siteName: "WalieMatthieu",
     type: "website",
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@BenAzlay",
+    site: "@NotWalie",
     title: "Walie Matthieu | Web3 Full-Stack Engineer",
     description:
       "Walie Matthieu is a Frontend, Backend and Blockchain Developer",
