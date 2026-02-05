@@ -86,9 +86,11 @@ export default function Home() {
     <div className="bg-red-900 rounded-t-2xl p-6 text-center space-y-4 z-50 gap-2 flex flex-col items-center sticky">
       <p className="text-xl font-bold -mb-4">Interested in working together?</p>
       <EmailButton />
+      {/* Bouton vers le jeu Snake */}
       <a
         href="https://walie-matthieu.github.io/snake-game/"
         target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 px-6 py-2 bg-white text-red-900 font-semibold rounded hover:bg-gray-200 transition"
       >
         Jouer au Snake
@@ -101,6 +103,7 @@ export default function Home() {
     <main className="min-h-screen text-white bg-gray-800">
       {introSection()}
       {/* {projectsSection()} */}
+      {/* Affichage du footer (contient le bouton Snake) */}
       {footer()}
     </main>
   );
