@@ -88,9 +88,7 @@ export default function Home() {
       <EmailButton />
       {/* Bouton vers le jeu Snake */}
       <a
-        href="https://walie-matthieu.github.io/snake-game/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/snake-game"
         className="mt-4 px-6 py-2 bg-white text-red-900 font-semibold rounded hover:bg-gray-200 transition"
       >
         Jouer au Snake
