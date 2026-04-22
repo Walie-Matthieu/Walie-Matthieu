@@ -92,7 +92,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="mt-4 px-6 py-2 bg-white text-red-900 font-semibold rounded hover:bg-gray-200 transition"
       >
-        Jouer au Snake
+        Play the Snake Game I built!
       </a>
       <p>Copyright © Walie Matthieu 2025</p>
     </div>
