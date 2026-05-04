@@ -94,7 +94,7 @@ export default function Home() {
       >
         Play the Snake Game I built!
       </a>
-      <p>Copyright © Walie Matthieu 2025</p>
+      <p>Copyright © Walie Matthieu 2026</p>
     </div>
   );
 
