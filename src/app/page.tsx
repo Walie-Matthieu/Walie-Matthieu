@@ -15,7 +15,7 @@ export default function Home() {
           src="/aigle.jpg"
           alt="PFP"
           fill
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           className="rounded-full"
         />
       </div>

@@ -12,68 +12,77 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    title: "Développeur Frontend",
-    company: "Entreprise A",
+    title: "Baccalaureate in Electrical and Connected Systems",
+    company: "Robert Keller Vocational High School",
     companyUrl: "https://example.com",
     description:
-      "Création d'interfaces React et Next.js, amélioration des performances et maintenance de l'UI.",
-    dates: "Jan 2025 - Present",
+      "MELEC: Electrical and Connected Systems – Robert Keller Vocational High School, France",
+    dates: "2017",
   },
   {
-    title: "Stagiaire Développement Web",
-    company: "Entreprise B",
+    title: "Licence (BA) in History",
+    company: "Paris-Sorbonne University (Paris 4)",
     companyUrl: "https://example.com",
     description:
-      "Développement de fonctionnalités, correction de bugs et collaboration avec l'équipe produit.",
-    dates: "Jul 2024 - Dec 2024",
+      "History (BA), Year 2 – Paris-Sorbonne University (Paris 4) Strengthened skills in research methods and critical analysis.",
+    dates: "2017 - 2019",
   },
   {
-    title: "Freelance Frontend",
-    company: "Client C",
+    title: "LLCER-English Studies",
+    company: "Institut Catholique de Paris (ICP)",
     companyUrl: "https://example.com",
     description:
-      "Intégration responsive, optimisation Lighthouse et déploiement de projets web.",
-    dates: "Jan 2024 - Jun 2024",
+      "(Languages, Literatures, and Foreign & Regional Civilizations)",
+    dates: "2019 - 2020",
   },
   {
-    title: "Développeur Full Stack Junior",
-    company: "Startup D",
+    title: "MIIT Program (Network Administration)",
+    company: "Learneo academie",
     companyUrl: "https://example.com",
     description:
-      "Développement d'API Node.js et d'interfaces React avec une base de tests unitaires.",
-    dates: "Jul 2023 - Dec 2023",
+      "Deepening network concepts and basicadministration.",
+    dates: "2020 - 2021",
   },
   {
-    title: "Alternant Développeur Web",
-    company: "Société E",
+    title: "CCNA certification level (Cisco)",
+    company: "Learneo academie",
     companyUrl: "https://example.com",
     description:
-      "Refonte de pages marketing et maintenance de composants partagés au sein de l'équipe front.",
-    dates: "Jan 2023 - Jun 2023",
+      "Networking foundations: equipment setup and key routing/switching principles.",
+    dates: "2021",
   },
   {
-    title: "Contributeur Open Source",
-    company: "Projet F",
+    title: "Cybersecurity Assistant Training",
+    company: "Pop School",
     companyUrl: "https://example.com",
     description:
-      "Corrections de bugs, revue de pull requests et amélioration progressive de la documentation.",
-    dates: "Jul 2022 - Dec 2022",
+      "Awareness and introductory practices in cybersecurity and system protection.",
+    dates: "2022",
   },
   {
-    title: "Développeur WordPress",
-    company: "Agence G",
+    title: "IT & Web",
+    company: "National Red Cross (Paris)",
     companyUrl: "https://example.com",
     description:
-      "Création de thèmes sur mesure et optimisation SEO technique pour des sites vitrines.",
-    dates: "Jan 2022 - Jun 2022",
+      "Application Development Lead,",
+    dates: "2023",
   },
   {
-    title: "Assistant Développement",
-    company: "Organisation H",
+    title: "Full-Stack Web Developer Training",
+    company: "Studi",
     companyUrl: "https://example.com",
     description:
-      "Support applicatif, correctifs front-end et suivi des incidents en production.",
-    dates: "Jul 2021 - Dec 2021",
+      "Class in web development and digital tools (HTML/CSS/JS, best practices).",
+    dates: "2024 - 2025",
+  },
+
+  {
+    title: "IT internship",
+    company: "Fundação Vitor Reis Morais (Lisbon)",
+    companyUrl: "https://example.com",
+    description:
+      "Modernizing an old website Supervising and finding suitable tools Participating in testing, bug fixing and improving the user experience on the developed interfaces.",
+    dates: "2026",
   },
 ];
 
@@ -120,7 +129,7 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        <div className="relative pl-10 sm:pl-14 md:pl-0 before:absolute before:left-4 md:before:left-1/2 before:top-0 before:h-full before:w-px before:-translate-x-1/2 before:bg-gradient-to-b before:from-transparent before:via-[#64ffda]/40 before:to-transparent">
+        <div className="relative pb-8 pl-10 sm:pl-14 md:pl-0 before:absolute before:left-4 md:before:left-1/2 before:top-0 before:h-full before:w-[2px] before:-translate-x-1/2 before:bg-[#64ffda]/45">
           {experiences.map((experience, index) => {
             const isVisible = visibleItems.includes(index);
             const isLeftAligned = index % 2 === 0;
@@ -139,7 +148,7 @@ export default function ExperienceSection() {
                     itemRefs.current[index] = node;
                   }}
                   data-index={index}
-                  className={`relative w-full rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm transition-all duration-700 ease-out sm:p-6 md:w-[calc(50%-2rem)] before:absolute before:left-4 sm:before:left-4 before:top-7 before:h-3 before:w-3 before:-translate-x-1/2 before:rounded-full before:border before:border-[#0a192f] before:bg-[#64ffda] before:shadow-[0_0_0_6px_rgba(100,255,218,0.12)] md:before:top-8 ${
+                  className={`relative w-full rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm transition-all duration-700 ease-out sm:p-6 md:w-[calc(50%-2rem)] before:hidden md:before:block md:before:absolute md:before:top-8 md:before:h-3 md:before:w-3 md:before:rounded-full md:before:border md:before:border-[#0a192f] md:before:bg-[#64ffda] md:before:shadow-[0_0_0_6px_rgba(100,255,218,0.12)] ${
                     isLeftAligned
                       ? "md:before:right-[-1.5rem] md:before:left-auto md:before:translate-x-1/2"
                       : "md:before:left-[-1.5rem] md:before:-translate-x-1/2"
@@ -176,6 +185,11 @@ export default function ExperienceSection() {
               </div>
             );
           })}
+
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0.5 left-4 h-3.5 w-3.5 -translate-x-1/2 rotate-45 border-b-2 border-r-2 border-[#64ffda] md:left-1/2"
+          />
         </div>
       </div>
     </section>
