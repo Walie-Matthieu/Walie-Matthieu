@@ -125,7 +125,7 @@ export default function ExperienceSection() {
             Experiences
           </h2>
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Une timeline verticale pour présenter ton parcours professionnel.
+            Here are some of my educational and professional experiences, showcasing my journey in the IT and web development fields. Each experience has contributed to my growth and skills in different ways, from foundational education to hands-on internships.
           </p>
         </div>
 
