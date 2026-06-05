@@ -16,7 +16,7 @@ const experiences: Experience[] = [
     company: "Robert Keller Vocational High School",
     companyUrl: "https://example.com",
     description:
-      "MELEC: Electrical and Connected Systems – Robert Keller Vocational High School, France",
+      "MELEC: Electrical and Connected Systems.",
     dates: "2017",
   },
   {
@@ -32,7 +32,7 @@ const experiences: Experience[] = [
     company: "Institut Catholique de Paris (ICP)",
     companyUrl: "https://example.com",
     description:
-      "(Languages, Literatures, and Foreign & Regional Civilizations)",
+      "(Languages, Literatures, and Foreign & Regional Civilizations).",
     dates: "2019 - 2020",
   },
   {
@@ -40,7 +40,7 @@ const experiences: Experience[] = [
     company: "Learneo academie",
     companyUrl: "https://example.com",
     description:
-      "Deepening network concepts and basicadministration.",
+      "Deepening network concepts and basic administration system.",
     dates: "2020 - 2021",
   },
   {
@@ -64,7 +64,7 @@ const experiences: Experience[] = [
     company: "National Red Cross (Paris)",
     companyUrl: "https://example.com",
     description:
-      "Application Development Lead,",
+      "Application Development Lead.",
     dates: "2023",
   },
   {
@@ -81,7 +81,7 @@ const experiences: Experience[] = [
     company: "Fundação Vitor Reis Morais (Lisbon)",
     companyUrl: "https://example.com",
     description:
-      "Modernizing an old website Supervising and finding suitable tools Participating in testing, bug fixing and improving the user experience on the developed interfaces.",
+      "Modernizing an old website. Supervising and finding suitable tools. Participating in testing, bug fixing and improving the user experience on the developed interfaces.",
     dates: "2026",
   },
 ];
