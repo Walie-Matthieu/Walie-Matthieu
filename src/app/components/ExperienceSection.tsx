@@ -124,6 +124,10 @@ export default function ExperienceSection() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Experiences
           </h2>
+          <span
+            aria-hidden="true"
+            className="mx-auto mt-4 block h-[2px] w-28 rounded-full bg-[#64ffda]/45"
+          />
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
             Here are some of my educational and professional experiences, showcasing my journey in the IT and web development fields. Each experience has contributed to my growth and skills in different ways, from foundational education to hands-on internships.
           </p>
