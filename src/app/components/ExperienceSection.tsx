@@ -169,7 +169,7 @@ export default function ExperienceSection() {
                         {experience.title}
                       </h3>
                       <a
-                        href={experience.companyUrl}
+                        // href={experience.companyUrl} à modifier avec les vrais liens
                         target="_blank"
                         rel="noopener noreferrer"
                           className="mt-2 inline-flex w-fit rounded-full border border-[#64ffda]/20 bg-[#64ffda]/5 px-3 py-1 text-sm font-medium text-[#64ffda] transition-colors hover:border-[#64ffda]/40 hover:bg-[#64ffda]/10 hover:text-[#7fffe2]"
