@@ -61,7 +61,7 @@ const experiences: Experience[] = [
   },
   {
     title: "IT & Web",
-    company: "National Red Cross (Paris)",
+    company: "National headquarters of the French Red Cross",
     companyUrl: "https://example.com",
     description:
       "Application Development Lead.",
