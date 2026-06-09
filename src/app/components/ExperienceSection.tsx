@@ -21,7 +21,7 @@ const experiences: Experience[] = [
   },
   {
     title: "Licence (BA) in History",
-    company: "Paris-Sorbonne University (Paris 4)",
+    company: "Paris-Sorbonne University",
     companyUrl: "https://example.com",
     description:
       "History (BA), Year 2 – Paris-Sorbonne University (Paris 4) Strengthened skills in research methods and critical analysis.",
