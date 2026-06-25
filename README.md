@@ -1,6 +1,6 @@
 # Walie Matthieu Portfolio
 
-Personal portfolio built with Next.js to showcase my profile, experience, and Web3 and Full-Stack projects!
+Hi welcome to my personal portfolio built with Next.js to showcase my profile, experience, and Web3 and Full-Stack projects!
 
 ## Preview
 
