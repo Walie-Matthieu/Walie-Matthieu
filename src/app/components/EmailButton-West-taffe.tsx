@@ -1,7 +1,7 @@
 import React from "react";
 
 const EmailButton: React.FC = () => {
-  const email = "whoumad@gmail.com";
+  const email = "walie-matthieu@protonmail.com";
   const subject = encodeURIComponent("Ping, let's connect!");
   const body = encodeURIComponent(
     "Hello Walie,\n\nI’d love to connect with you! Let me know your availability.\n\nBest regards,\n[Your Name]"

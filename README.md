@@ -1,86 +1,36 @@
-# Walie Matthieu Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Hi welcome to my personal portfolio built with Next.js to showcase my profile, experience, and Web3 and Full-Stack projects!
+## Getting Started
 
-## Preview
+First, run the development server:
 
-This site contains:
-- An introductory section with an overview
-- An experience section
-- GitHub and LinkedIn links
-- An email contact button
-- [Acces to the Snake Game](https://snake-game-two-ochre.vercel.app/)
-
-## Stack technique
-
-- Node.js 18+
-- Next.js 15
-- React 19
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-
-## Démarrage local
-
-Prerequisites:
-- Node.js 18+ (20+ recommandé)
-- npm
-
-Installation:
-```bash
-npm install
-```
-
-Initiate development:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Access to [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Build production:
-```bash
-npm run build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Initiate the build:
-```bash
-npm run start
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Available scripts
+## Learn More
 
-- `npm run dev`: starts the local server
-- `npm run build`: compiles the application for production
-- `npm run start`: launches the production version
-- `npm run lint`: checks the code quality
+To learn more about Next.js, take a look at the following resources:
 
-## Structure du projet
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- `src/app/page.tsx`: home page
-- `src/app/layout.tsx`: layout global and metadata SEO
-- `src/app/components/EmailButton.tsx`: email button
-- `src/app/components/ExperienceSection.tsx`: exeperience section
-- `src/app/components/ScrollWidget.tsx`: scroll widget
-- `src/app/globals.css`: global styles 
-- `public/`: assets statics (logos, icons, manifest)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deployment
+## Deploy on Vercel
 
-Deployed on Vercel.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Visit the online version : [waliematthieu.com](https://waliematthieu.com)
-
-## SEO
-
-The main metadata is defined in `src/app/layout.tsx`, including:
-- Title and description
-- Open Graph
-- Twitter Card
-- Manifest et icons
-
-## Contact
-
-- GitHub: [https://github.com/Walie-Matthieu](https://github.com/Walie-Matthieu)
-- LinkedIn: [https://www.linkedin.com/in/walie-matthieu/](https://www.linkedin.com/in/walie-matthieu/)
-- Portfolio: [waliematthieu.com](https://waliematthieu.com)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
