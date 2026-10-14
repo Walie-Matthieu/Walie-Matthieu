@@ -19,7 +19,7 @@ export default function Home() {
   const introSection = () => (
     <div
       id="intro-section"
-      className="min-h-screen px-4 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-blue-900 to-gray-800 "
+      className="relative min-h-screen px-4 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-br from-blue-900 to-gray-800 "
     >
       <div className="relative w-48 h-48">
         <Image
@@ -61,6 +61,32 @@ export default function Home() {
           <span className="label">LinkedIn</span>
         </a>
       </div>
+      <button
+        type="button"
+        aria-label="Aller à la section suivante"
+        onClick={() =>
+          document
+            .getElementById("intro-section")
+            ?.nextElementSibling?.scrollIntoView({ behavior: "smooth" }) // Vitesse du scroll
+        }
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg" // Lien de l'indication de scroll
+          viewBox="0 0 24 48"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={1.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-8 h-16"
+        >
+          <rect x="5" y="1" width="14" height="24" rx="7" />
+          <path d="M12 6v5" />
+          <path d="M7 30l5 5 5-5" />
+          <path d="M7 38l5 5 5-5" />
+        </svg>
+      </button>
       {/* <ScrollWidget projectsSectionRef={projectsSectionRef} /> */}
     </div>
   );
