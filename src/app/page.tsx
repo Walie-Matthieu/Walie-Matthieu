@@ -69,7 +69,7 @@ export default function Home() {
             .getElementById("intro-section")
             ?.nextElementSibling?.scrollIntoView({ behavior: "smooth" }) // Vitesse du scroll
         }
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors cursor-pointer"
+        className="hidden lg:block absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors cursor-pointer" //Cache le bouton de scroll sur les petits écrans
       >
         <svg
           xmlns="http://www.w3.org/2000/svg" // Lien de l'indication de scroll
