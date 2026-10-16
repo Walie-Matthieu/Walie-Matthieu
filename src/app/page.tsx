@@ -16,6 +16,11 @@ export default function Home() {
   const isMobile = useIsMobile();
   const projectsSectionRef = useRef<HTMLDivElement>(null);
 
+  const scrollToNext = () =>
+    document
+      .getElementById("intro-section")
+      ?.nextElementSibling?.scrollIntoView({ behavior: "smooth" });
+
   const introSection = () => (
     <div
       id="intro-section"
@@ -61,14 +66,10 @@ export default function Home() {
           <span className="label">LinkedIn</span>
         </a>
       </div>
-      <button
+      <button //Version desktop du bouton de scroll
         type="button"
         aria-label="Aller à la section suivante"
-        onClick={() =>
-          document
-            .getElementById("intro-section")
-            ?.nextElementSibling?.scrollIntoView({ behavior: "smooth" }) // Vitesse du scroll
-        }
+        onClick={scrollToNext}
         className="hidden lg:block absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors cursor-pointer" //Cache le bouton de scroll sur les petits écrans
       >
         <svg
@@ -85,6 +86,26 @@ export default function Home() {
           <path d="M12 6v5" />
           <path d="M7 30l5 5 5-5" />
           <path d="M7 38l5 5 5-5" />
+        </svg>
+      </button>
+      <button //Version mobile du bouton de scroll
+        type="button" 
+        aria-label="Aller à la section suivante"
+        onClick={scrollToNext}
+        className="lg:hidden sm:absolute sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 text-emerald-400 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 28 30"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={1.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-8 h-8"
+        >
+          <polygon points="2,2 14,12 26,2 26,7 14,17 2,7" />
+          <polygon points="2,13 14,23 26,13 26,18 14,28 2,18" />
         </svg>
       </button>
       {/* <ScrollWidget projectsSectionRef={projectsSectionRef} /> */}
