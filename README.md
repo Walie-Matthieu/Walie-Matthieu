@@ -32,7 +32,7 @@ I enjoy building for the web, learning new technologies, and turning ideas into 
 
 - **[Personal portfolio](https://waliematthieu.com)** — a place to explore my background and experience.
 - **[Snake game](https://snake-game-two-ochre.vercel.app/)** — a small game project built for the web.
-                      AND EVEN MORE!!👀
+                     - AND EVEN MORE!!👀-
 ## This repository
 
 This is my GitHub profile repository. Its README is displayed on my profile, and it also contains the source code for my personal portfolio.
