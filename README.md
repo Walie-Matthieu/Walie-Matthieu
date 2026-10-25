@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-Hi welcome to my personal portfolio built with Next.js to showcase my profile, experience, and Web3 and Full-Stack projects!
+# Hi, I'm Walie Matthieu 👋
 
-## Getting Started
+### Full-stack web developer with a curiosity for Web3
 
-First, run the development server:
+I enjoy building for the web, learning new technologies, and turning ideas into useful experiences.
+
+[Portfolio](https://waliematthieu.com) · [LinkedIn](https://www.linkedin.com/in/walie-matthieu/) · [GitHub](https://github.com/Walie-Matthieu)
+
+</div>
+
+---
+
+## About me
+
+- 🌱 Growing my skills in full-stack web development
+- 🔍 Interested in Web3, blockchain, and the technologies behind the web
+- 🧭 My background includes IT, networking, cybersecurity, and web development
+- 💬 Always happy to connect and talk about technology or a potential project
+
+## Technologies
+
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+</p>
+
+## Featured work
+
+- **[Personal portfolio](https://waliematthieu.com)** — a place to explore my background and experience.
+- **[Snake game](https://snake-game-two-ochre.vercel.app/)** — a small game project built for the web.
+
+## This repository
+
+This is my GitHub profile repository. Its README is displayed on my profile, and it also contains the source code for my personal portfolio.
+
+The portfolio is built with Next.js, React, TypeScript, and Tailwind CSS. To run it locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then open [http://localhost:3000](http://localhost:3000).
