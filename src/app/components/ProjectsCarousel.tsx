@@ -99,11 +99,13 @@ export default function ProjectsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="starry-sky flex min-h-screen flex-col justify-center px-4 py-12 sm:px-6 sm:py-16 md:px-12 lg:px-16"
-    >
+      className="starry-sky flex min-h-screen flex-col justify-start px-4 pt-0 pb-12 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-16"> 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">Projects</h2>
+        {/* Bloc autonome : titre et sous-titre */}
+        <div className="projects-heading relative -translate-y-1 text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Projects
+          </h2>
           <span
             aria-hidden="true"
             className="mx-auto mt-4 block h-[2px] w-28 rounded-full bg-[#64ffda]/45"
@@ -113,125 +115,128 @@ export default function ProjectsCarousel() {
           </p>
         </div>
 
-        <div
-          className={`mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm select-none ${
-            isDragging ? "cursor-grabbing" : "cursor-grab"
-          }`}
-          style={{ touchAction: "pan-y" }}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={endDrag}
-          onPointerLeave={endDrag}
-          onPointerCancel={endDrag}
-          onDragStart={(event) => event.preventDefault()}
-        >
+        {/* Bloc autonome : carrousel */}
+        <div className="projects-content">
           <div
-            className={`flex ${
-              isDragging ? "" : "transition-transform duration-500 ease-out"
+            className={`mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm select-none ${
+              isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
-            style={{
-              transform: `translateX(calc(${-index * 100}% + ${dragX}px))`,
-            }}
+            style={{ touchAction: "pan-y" }}
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={endDrag}
+            onPointerLeave={endDrag}
+            onPointerCancel={endDrag}
+            onDragStart={(event) => event.preventDefault()}
           >
-            {projects.map((project, i) => (
-              <article
-                key={`${project.name}-${i}`}
-                aria-hidden={i !== index}
-                className="flex w-full shrink-0 flex-col gap-6 p-8 text-left lg:p-10"
-              >
-                <h3 className="text-2xl font-semibold text-white lg:text-3xl">
-                  {project.name}
-                </h3>
+            <div
+              className={`flex ${
+                isDragging ? "" : "transition-transform duration-500 ease-out"
+              }`}
+              style={{
+                transform: `translateX(calc(${-index * 100}% + ${dragX}px))`,
+              }}
+            >
+              {projects.map((project, i) => (
+                <article
+                  key={`${project.name}-${i}`}
+                  aria-hidden={i !== index}
+                  className="flex w-full shrink-0 flex-col gap-6 p-8 text-left lg:p-10"
+                >
+                  <h3 className="text-2xl font-semibold text-white lg:text-3xl">
+                    {project.name}
+                  </h3>
 
-                <div className="grid flex-1 grid-cols-2 gap-8">
-                  <div className="flex flex-col justify-center gap-4">
-                    <p className="leading-7 text-slate-300">
-                      {project.description}
-                    </p>
-                    {project.url && (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-fit text-sm font-semibold text-[#64ffda] hover:text-[#7fffe2]"
-                      >
-                        View project →
-                      </a>
-                    )}
-                  </div>
-
-                  <div className="flex min-h-[18rem] gap-4">
-                    {project.images.length === 0 ? (
-                      <div className="w-full rounded-2xl bg-gradient-to-br from-indigo-500/40 to-[#64ffda]/20" />
-                    ) : (
-                      project.images.slice(0, 2).map((src) => (
-                        <div
-                          key={src}
-                          className="relative flex-1 overflow-hidden rounded-2xl"
+                  <div className="grid flex-1 grid-cols-2 gap-8">
+                    <div className="flex flex-col justify-center gap-4">
+                      <p className="leading-7 text-slate-300">
+                        {project.description}
+                      </p>
+                      {project.url && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-fit text-sm font-semibold text-[#64ffda] hover:text-[#7fffe2]"
                         >
-                          <Image
-                            src={src}
-                            alt={`${project.name} screenshot`}
-                            fill
-                            draggable={false}
-                            className="object-cover"
-                          />
-                        </div>
-                      ))
-                    )}
+                          View project →
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="flex min-h-[18rem] gap-4">
+                      {project.images.length === 0 ? (
+                        <div className="w-full rounded-2xl bg-gradient-to-br from-indigo-500/40 to-[#64ffda]/20" />
+                      ) : (
+                        project.images.slice(0, 2).map((src) => (
+                          <div
+                            key={src}
+                            className="relative flex-1 overflow-hidden rounded-2xl"
+                          >
+                            <Image
+                              src={src}
+                              alt={`${project.name} screenshot`}
+                              fill
+                              draggable={false}
+                              className="object-cover"
+                            />
+                          </div>
+                        ))
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <ul className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-full border border-[#64ffda]/20 bg-[#64ffda]/5 px-3 py-1 text-xs font-medium text-[#64ffda]"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+                  <ul className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-full border border-[#64ffda]/20 bg-[#64ffda]/5 px-3 py-1 text-xs font-medium text-[#64ffda]"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="mt-6 flex items-center justify-center gap-4">
-          <button
-            type="button"
-            aria-label="Previous project"
-            disabled={index === 0}
-            onClick={() => goTo(index - 1)}
-            className={arrowClass}
-          >
-            ←
-          </button>
-          <div className="flex gap-2">
-            {projects.map((project, i) => (
-              <button
-                key={`${project.name}-dot-${i}`}
-                type="button"
-                aria-label={`Go to project ${i + 1}`}
-                aria-current={i === index}
-                onClick={() => goTo(i)}
-                className={`!h-2.5 !rounded-full !p-0 transition-all ${
-                  i === index
-                    ? "!w-6 !bg-[#64ffda]"
-                    : "!w-2.5 !bg-white/30 hover:!bg-white/50"
-                }`}
-              />
-            ))}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              aria-label="Previous project"
+              disabled={index === 0}
+              onClick={() => goTo(index - 1)}
+              className={arrowClass}
+            >
+              ←
+            </button>
+            <div className="flex gap-2">
+              {projects.map((project, i) => (
+                <button
+                  key={`${project.name}-dot-${i}`}
+                  type="button"
+                  aria-label={`Go to project ${i + 1}`}
+                  aria-current={i === index}
+                  onClick={() => goTo(i)}
+                  className={`!h-2.5 !rounded-full !p-0 transition-all ${
+                    i === index
+                      ? "!w-6 !bg-[#64ffda]"
+                      : "!w-2.5 !bg-white/30 hover:!bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Next project"
+              disabled={index === projects.length - 1}
+              onClick={() => goTo(index + 1)}
+              className={arrowClass}
+            >
+              →
+            </button>
           </div>
-          <button
-            type="button"
-            aria-label="Next project"
-            disabled={index === projects.length - 1}
-            onClick={() => goTo(index + 1)}
-            className={arrowClass}
-          >
-            →
-          </button>
         </div>
       </div>
     </section>
