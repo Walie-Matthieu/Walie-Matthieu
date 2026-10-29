@@ -3,22 +3,30 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+type StackItem = string | { name: string; logo: string };
+
 type Project = {
   name: string;
   description: string;
   images: string[]; // 0 à 2 images, chemins dans /public/projects/
-  stack: string[];
+  stack: StackItem[]; // texte (badge) ou logo
   url?: string;
 };
+
+// Taille des logos de stack : modifiable sans impact sur le reste de la mise en page
+const STACK_LOGO_SIZE = "4rem";
+
+// Espace réservé dans la mise en page pour un logo (ne change pas avec STACK_LOGO_SIZE)
+const STACK_LOGO_SLOT = "0rem";
 
 // Projets d'exemple : à remplacer par les vrais projets
 const projects: Project[] = [
   {
     name: "West-Fun", //Projet 1
     description:
-      "A mobile partey game I built for fun, there is multiple game modes with different themes, I know the name is lazy but I'm also working on it!",
+      "A mobile party game I'm building for fun and also to improve my skills on mobile development, there are multiple game modes with different themes, I know the name could be better but I'm also working on it!",
     images: ["/logos/photo%20appli.png"],
-    stack: ["Flutter", "Dart"],
+    stack: [{ name: "Flutter", logo: "/logos/flutter-logo.webp" }],
   },
   {
     name: "Project name",
@@ -133,7 +141,7 @@ export default function ProjectsCarousel() {
             aria-hidden="true"
             className="mx-auto mt-4 block h-[2px] w-28 rounded-full bg-[#64ffda]/45"
           />
-          <p className="mt-3 text-sm text-slate-300 sm:text-base">
+          <p className="mt-3 text-base font-semibold text-gray-200">
             Some of the projects I&apos;ve worked on.
           </p>
         </div>
@@ -167,7 +175,7 @@ export default function ProjectsCarousel() {
                   className="flex w-full shrink-0 flex-col gap-6 py-8 pl-0 pr-8 text-left lg:py-10 lg:pr-10"
                 >
                   <h3
-                    className="text-2xl font-semibold text-white lg:text-3xl"
+                    className="text-2xl font-bold text-white lg:text-3xl"
                     style={moveRem(POSITIONS.projectName)}
                   >
                     {project.name}
@@ -178,7 +186,7 @@ export default function ProjectsCarousel() {
                       className="flex flex-col justify-center gap-4"
                       style={moveRem(POSITIONS.description)}
                     >
-                      <p className="leading-7 text-slate-300">
+                      <p className="text-base font-semibold leading-7 text-gray-200">
                         {project.description}
                       </p>
                       {project.url && (
@@ -222,14 +230,41 @@ export default function ProjectsCarousel() {
                     className="flex flex-wrap gap-2"
                     style={moveRem(POSITIONS.stack)}
                   >
-                    {project.stack.map((tech) => (
-                      <li
-                        key={tech}
-                        className="rounded-full border border-[#64ffda]/20 bg-[#64ffda]/5 px-3 py-1 text-xs font-medium text-[#64ffda]"
-                      >
-                        {tech}
-                      </li>
-                    ))}
+                    {project.stack.map((tech) =>
+                      typeof tech === "string" ? (
+                        <li
+                          key={tech}
+                          className="rounded-full border border-[#64ffda]/20 bg-[#64ffda]/5 px-3 py-1 text-xs font-medium text-[#64ffda]"
+                        >
+                          {tech}
+                        </li>
+                      ) : (
+                        <li
+                          key={tech.name}
+                          className="relative"
+                          style={{
+                            height: STACK_LOGO_SLOT,
+                            width: STACK_LOGO_SLOT,
+                          }}
+                        >
+                          <div
+                            className="absolute left-0 top-1/2 -translate-y-1/2"
+                            style={{
+                              height: STACK_LOGO_SIZE,
+                              width: STACK_LOGO_SIZE,
+                            }}
+                          >
+                            <Image
+                              src={tech.logo}
+                              alt={tech.name}
+                              fill
+                              draggable={false}
+                              className="object-contain object-left"
+                            />
+                          </div>
+                        </li>
+                      ),
+                    )}
                   </ul>
                 </article>
               ))}
