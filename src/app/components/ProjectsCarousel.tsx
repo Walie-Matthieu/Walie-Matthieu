@@ -122,7 +122,7 @@ export default function ProjectsCarousel() {
   };
 
   const arrowClass =
-    "!bg-white/10 !text-white hover:!bg-white/20 disabled:opacity-30 disabled:hover:!bg-white/10";
+    "!h-12 !w-12 !rounded-full !p-0 !bg-white/10 !text-white hover:!bg-white/20 disabled:opacity-30 disabled:hover:!bg-white/10";
 
   return (
     <section
@@ -288,8 +288,8 @@ export default function ProjectsCarousel() {
                   onClick={() => goTo(i)}
                   className={`!h-2.5 !rounded-full !p-0 transition-all ${
                     i === index
-                      ? "!w-6 !bg-[#64ffda]"
-                      : "!w-2.5 !bg-white/30 hover:!bg-white/50"
+                      ? "!w-6 !bg-white"
+                      : "!w-2.5 !bg-gray-200 hover:!bg-white"
                   }`}
                 />
               ))}
