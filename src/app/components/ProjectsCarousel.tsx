@@ -57,6 +57,21 @@ const POSITIONS = {
 // Taille de la zone photo en rem (largeur, hauteur)
 const IMAGE_SIZE = { width: "26.25rem", height: "25rem" };
 
+// Sous lg (1024 px), la mise en page passe en version mobile
+const MOBILE_QUERY = "(max-width: 1023.98px)";
+
+// Mêmes unités que POSITIONS (heading en px, le reste en rem)
+const MOBILE_POSITIONS = {
+  heading: { x: 0, y: 0 },
+  projectName: { x: 0, y: 0 },
+  description: { x: 0, y: 0 },
+  images: { x: 0, y: 0 },
+  stack: { x: 0, y: 0 },
+};
+
+// Pas de hauteur fixe : la photo prend la hauteur restante de la grille
+const MOBILE_IMAGE_SIZE = { width: "100%" };
+
 const move = ({ x, y }: { x: number; y: number }) => ({
   transform: `translate(${x}px, ${y}px)`,
 });
@@ -65,6 +80,21 @@ const moveRem = ({ x, y }: { x: number; y: number }) => ({
   transform: `translate(${x}rem, ${y}rem)`,
 });
 
+// Faux au premier rendu (rendu serveur en version PC), puis mis à jour après le montage
+function useIsMobileLayout() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mediaQuery.matches);
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
+  }, []);
+
+  return isMobile;
+}
+
 export default function ProjectsCarousel() {
   const sectionRef = useRef<HTMLElement>(null);
   const [index, setIndex] = useState(0);
@@ -72,6 +102,9 @@ export default function ProjectsCarousel() {
   const [isDragging, setIsDragging] = useState(false);
   const dragStart = useRef<number | null>(null);
   const isVisible = useRef(false);
+  const isMobile = useIsMobileLayout();
+  const positions = isMobile ? MOBILE_POSITIONS : POSITIONS;
+  const imageSize = isMobile ? MOBILE_IMAGE_SIZE : IMAGE_SIZE;
 
   const goTo = (next: number) =>
     setIndex(Math.min(Math.max(next, 0), projects.length - 1));
@@ -127,12 +160,12 @@ export default function ProjectsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="starry-sky flex min-h-screen flex-col justify-start px-4 pt-0 pb-12 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-2"> 
-      <div className="relative z-10 mx-auto w-full max-w-none">
+      className="starry-sky flex min-h-screen max-lg:min-h-dvh flex-col justify-start px-4 pt-0 pb-6 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-2"> 
+      <div className="relative z-10 mx-auto w-full max-w-none max-lg:flex max-lg:flex-1 max-lg:flex-col">
         {/* Bloc autonome : titre et sous-titre */}
         <div
           className="projects-heading relative text-center"
-          style={move(POSITIONS.heading)}
+          style={move(positions.heading)}
         >
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Projects
@@ -147,9 +180,9 @@ export default function ProjectsCarousel() {
         </div>
 
         {/* Bloc autonome : carrousel */}
-        <div className="projects-content">
+        <div className="projects-content max-lg:flex max-lg:flex-1 max-lg:flex-col">
           <div
-            className={`mt-10 overflow-hidden select-none ${
+            className={`mt-6 lg:mt-10 overflow-hidden select-none max-lg:flex max-lg:shrink-0 max-lg:grow max-lg:flex-col ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
             style={{ touchAction: "pan-y" }}
@@ -161,7 +194,7 @@ export default function ProjectsCarousel() {
             onDragStart={(event) => event.preventDefault()}
           >
             <div
-              className={`flex ${
+              className={`flex max-lg:grow ${
                 isDragging ? "" : "transition-transform duration-500 ease-out"
               }`}
               style={{
@@ -172,19 +205,19 @@ export default function ProjectsCarousel() {
                 <article
                   key={`${project.name}-${i}`}
                   aria-hidden={i !== index}
-                  className="flex w-full shrink-0 flex-col gap-6 py-8 pl-0 pr-8 text-left lg:py-10 lg:pr-10"
+                  className="flex w-full shrink-0 flex-col gap-4 py-4 pl-0 pr-0 text-left lg:gap-6 lg:py-10 lg:pr-10"
                 >
                   <h3
                     className="text-2xl font-bold text-white lg:text-3xl"
-                    style={moveRem(POSITIONS.projectName)}
+                    style={moveRem(positions.projectName)}
                   >
                     {project.name}
                   </h3>
 
-                  <div className="grid flex-1 grid-cols-2 gap-8">
+                  <div className="grid flex-1 grid-cols-1 grid-rows-[auto_minmax(12rem,1fr)] gap-4 lg:grid-cols-2 lg:grid-rows-none lg:gap-8">
                     <div
                       className="flex flex-col justify-center gap-4"
-                      style={moveRem(POSITIONS.description)}
+                      style={moveRem(positions.description)}
                     >
                       <p className="text-base font-semibold leading-7 text-gray-200">
                         {project.description}
@@ -203,7 +236,7 @@ export default function ProjectsCarousel() {
 
                     <div
                       className="flex justify-self-center gap-4"
-                      style={{ ...moveRem(POSITIONS.images), ...IMAGE_SIZE }}
+                      style={{ ...moveRem(positions.images), ...imageSize }}
                     >
                       {project.images.length === 0 ? (
                         <div className="w-full" />
@@ -228,7 +261,7 @@ export default function ProjectsCarousel() {
 
                   <ul
                     className="flex flex-wrap gap-2"
-                    style={moveRem(POSITIONS.stack)}
+                    style={moveRem(positions.stack)}
                   >
                     {project.stack.map((tech) =>
                       typeof tech === "string" ? (
@@ -268,7 +301,7 @@ export default function ProjectsCarousel() {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-4 flex items-center justify-center gap-4 lg:mt-6">
             <button
               type="button"
               aria-label="Previous project"
