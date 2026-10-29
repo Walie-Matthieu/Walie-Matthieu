@@ -289,7 +289,7 @@ export default function ProjectsCarousel() {
                   className={`!h-2.5 !rounded-full !p-0 transition-all ${
                     i === index
                       ? "!w-6 !bg-white"
-                      : "!w-2.5 !bg-gray-200 hover:!bg-white"
+                      : "!w-2.5 !border !border-gray-200 !bg-transparent hover:!border-white"
                   }`}
                 />
               ))}
