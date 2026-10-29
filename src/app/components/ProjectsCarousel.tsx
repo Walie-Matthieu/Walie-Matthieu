@@ -13,8 +13,8 @@ type Project = {
   url?: string;
 };
 
-// Taille des logos de stack : modifiable sans impact sur le reste de la mise en page
-const STACK_LOGO_SIZE = "4rem";
+// Taille visible des logos de stack (largeur et hauteur séparées) : sans impact sur le reste de la mise en page
+const STACK_LOGO_SIZE = { width: "4rem", height: "2rem" };
 
 // Espace réservé dans la mise en page pour un logo (ne change pas avec STACK_LOGO_SIZE)
 const STACK_LOGO_SLOT = "0rem";
@@ -249,17 +249,14 @@ export default function ProjectsCarousel() {
                         >
                           <div
                             className="absolute left-0 top-1/2 -translate-y-1/2"
-                            style={{
-                              height: STACK_LOGO_SIZE,
-                              width: STACK_LOGO_SIZE,
-                            }}
+                            style={STACK_LOGO_SIZE}
                           >
                             <Image
                               src={tech.logo}
                               alt={tech.name}
                               fill
                               draggable={false}
-                              className="object-contain object-left"
+                              className="object-fill"
                             />
                           </div>
                         </li>
