@@ -14,12 +14,11 @@ type Project = {
 // Projets d'exemple : à remplacer par les vrais projets
 const projects: Project[] = [
   {
-    name: "Snake Game",
+    name: "West-Fun", //Projet 1
     description:
-      "A small browser game built for the web. Short description of the project goes here.",
-    images: [],
-    stack: ["TypeScript", "React"],
-    url: "https://snake-game-two-ochre.vercel.app/",
+      "A mobile partey game I built for fun, there is multiple game modes with different themes, I know the name is lazy but I'm also working on it!",
+    images: ["/logos/photo%20appli.png"],
+    stack: ["Flutter", "Dart"],
   },
   {
     name: "Project name",
@@ -36,6 +35,27 @@ const projects: Project[] = [
 ];
 
 const SWIPE_THRESHOLD = 60;
+
+// Positions : x négatif = gauche, positif = droite ; y négatif = haut, positif = bas
+// heading (titre + sous-titre) en px, les autres en rem (1 rem = 16 px)
+const POSITIONS = {
+  heading: { x: 0, y: 0 }, // px
+  projectName: { x: 6.25, y: 0 }, // rem
+  description: { x: 6.25, y: 0 }, // rem
+  images: { x: 0, y: 0 }, // rem
+  stack: { x: 6.25, y: 0 }, // rem
+};
+
+// Taille de la zone photo en rem (largeur, hauteur)
+const IMAGE_SIZE = { width: "26.25rem", height: "25rem" };
+
+const move = ({ x, y }: { x: number; y: number }) => ({
+  transform: `translate(${x}px, ${y}px)`,
+});
+
+const moveRem = ({ x, y }: { x: number; y: number }) => ({
+  transform: `translate(${x}rem, ${y}rem)`,
+});
 
 export default function ProjectsCarousel() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -99,10 +119,13 @@ export default function ProjectsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="starry-sky flex min-h-screen flex-col justify-start px-4 pt-0 pb-12 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-16"> 
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
+      className="starry-sky flex min-h-screen flex-col justify-start px-4 pt-0 pb-12 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-2"> 
+      <div className="relative z-10 mx-auto w-full max-w-none">
         {/* Bloc autonome : titre et sous-titre */}
-        <div className="projects-heading relative -translate-y-1 text-center">
+        <div
+          className="projects-heading relative text-center"
+          style={move(POSITIONS.heading)}
+        >
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Projects
           </h2>
@@ -118,7 +141,7 @@ export default function ProjectsCarousel() {
         {/* Bloc autonome : carrousel */}
         <div className="projects-content">
           <div
-            className={`mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm select-none ${
+            className={`mt-10 overflow-hidden select-none ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
             style={{ touchAction: "pan-y" }}
@@ -141,14 +164,20 @@ export default function ProjectsCarousel() {
                 <article
                   key={`${project.name}-${i}`}
                   aria-hidden={i !== index}
-                  className="flex w-full shrink-0 flex-col gap-6 p-8 text-left lg:p-10"
+                  className="flex w-full shrink-0 flex-col gap-6 py-8 pl-0 pr-8 text-left lg:py-10 lg:pr-10"
                 >
-                  <h3 className="text-2xl font-semibold text-white lg:text-3xl">
+                  <h3
+                    className="text-2xl font-semibold text-white lg:text-3xl"
+                    style={moveRem(POSITIONS.projectName)}
+                  >
                     {project.name}
                   </h3>
 
                   <div className="grid flex-1 grid-cols-2 gap-8">
-                    <div className="flex flex-col justify-center gap-4">
+                    <div
+                      className="flex flex-col justify-center gap-4"
+                      style={moveRem(POSITIONS.description)}
+                    >
                       <p className="leading-7 text-slate-300">
                         {project.description}
                       </p>
@@ -164,21 +193,24 @@ export default function ProjectsCarousel() {
                       )}
                     </div>
 
-                    <div className="flex min-h-[18rem] gap-4">
+                    <div
+                      className="flex justify-self-center gap-4"
+                      style={{ ...moveRem(POSITIONS.images), ...IMAGE_SIZE }}
+                    >
                       {project.images.length === 0 ? (
-                        <div className="w-full rounded-2xl bg-gradient-to-br from-indigo-500/40 to-[#64ffda]/20" />
+                        <div className="w-full" />
                       ) : (
                         project.images.slice(0, 2).map((src) => (
                           <div
                             key={src}
-                            className="relative flex-1 overflow-hidden rounded-2xl"
+                            className="relative flex-1"
                           >
                             <Image
                               src={src}
                               alt={`${project.name} screenshot`}
                               fill
                               draggable={false}
-                              className="object-cover"
+                              className="object-contain"
                             />
                           </div>
                         ))
@@ -186,7 +218,10 @@ export default function ProjectsCarousel() {
                     </div>
                   </div>
 
-                  <ul className="flex flex-wrap gap-2">
+                  <ul
+                    className="flex flex-wrap gap-2"
+                    style={moveRem(POSITIONS.stack)}
+                  >
                     {project.stack.map((tech) => (
                       <li
                         key={tech}
