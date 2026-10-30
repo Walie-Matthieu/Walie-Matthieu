@@ -54,8 +54,8 @@ const POSITIONS = {
   stack: { x: 6.25, y: 0 }, // rem
 };
 
-// Taille de la zone photo en rem (largeur, hauteur)
-const IMAGE_SIZE = { width: "26.25rem", height: "25rem" };
+// Taille de la zone photo. Hauteur : 25 rem au plus, réduite sur les écrans courts pour garder les flèches visibles (26.25 rem = 404 px de contenu hors photo + 16 px de marge), 12 rem au moins
+const IMAGE_SIZE = { width: "26.25rem", height: "clamp(12rem, calc(100vh - 26.25rem), 25rem)" };
 
 // Sous lg (1024 px), la mise en page passe en version mobile
 const MOBILE_QUERY = "(max-width: 1023.98px)";
@@ -160,14 +160,14 @@ export default function ProjectsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="starry-sky flex min-h-screen max-lg:min-h-dvh flex-col justify-start px-4 pt-0 pb-6 sm:px-6 sm:pt-2 sm:pb-16 md:px-12 lg:px-2"> 
+      className="starry-sky flex min-h-screen max-lg:min-h-dvh flex-col justify-start px-4 pt-0 pb-6 lg:px-2 lg:pt-2 lg:pb-16"> 
       <div className="relative z-10 mx-auto w-full max-w-none max-lg:flex max-lg:flex-1 max-lg:flex-col">
         {/* Bloc autonome : titre et sous-titre */}
         <div
           className="projects-heading relative text-center"
           style={move(positions.heading)}
         >
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-white lg:text-4xl">
             Projects
           </h2>
           <span
