@@ -54,8 +54,13 @@ const POSITIONS = {
   stack: { x: 6.25, y: 0 }, // rem
 };
 
-// Taille de la zone photo. Hauteur : 25 rem au plus, réduite sur les écrans courts pour garder les flèches visibles (26.25 rem = 404 px de contenu hors photo + 16 px de marge), 12 rem au moins
-const IMAGE_SIZE = { width: "26.25rem", height: "clamp(12rem, calc(100vh - 26.25rem), 25rem)" };
+// Taille de la zone photo : largeur fixe ; hauteur = place libre dans la section (height 100 %), entre minHeight et maxHeight
+const IMAGE_SIZE = {
+  width: "26.25rem",
+  height: "100%",
+  minHeight: "12rem",
+  maxHeight: "25rem",
+};
 
 // Sous lg (1024 px), la mise en page passe en version mobile
 const MOBILE_QUERY = "(max-width: 1023.98px)";
@@ -160,8 +165,8 @@ export default function ProjectsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="starry-sky flex min-h-screen max-lg:min-h-dvh flex-col justify-start px-4 pt-0 pb-6 lg:px-2 lg:pt-2 lg:pb-16"> 
-      <div className="relative z-10 mx-auto w-full max-w-none max-lg:flex max-lg:flex-1 max-lg:flex-col">
+      className="starry-sky flex min-h-screen max-lg:min-h-dvh flex-col justify-start px-4 pt-0 pb-6 lg:px-2 lg:pt-2 lg:pb-8"> 
+      <div className="relative z-10 mx-auto flex w-full max-w-none flex-1 flex-col">
         {/* Bloc autonome : titre et sous-titre */}
         <div
           className="projects-heading relative text-center"
@@ -180,9 +185,9 @@ export default function ProjectsCarousel() {
         </div>
 
         {/* Bloc autonome : carrousel */}
-        <div className="projects-content max-lg:flex max-lg:flex-1 max-lg:flex-col">
+        <div className="projects-content flex flex-1 flex-col">
           <div
-            className={`mt-6 lg:mt-10 overflow-hidden select-none max-lg:flex max-lg:shrink-0 max-lg:grow max-lg:flex-col ${
+            className={`mt-6 flex shrink-0 grow flex-col overflow-hidden select-none lg:mt-10 ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
             style={{ touchAction: "pan-y" }}
@@ -194,7 +199,7 @@ export default function ProjectsCarousel() {
             onDragStart={(event) => event.preventDefault()}
           >
             <div
-              className={`flex max-lg:grow ${
+              className={`flex grow ${
                 isDragging ? "" : "transition-transform duration-500 ease-out"
               }`}
               style={{
@@ -235,7 +240,7 @@ export default function ProjectsCarousel() {
                     </div>
 
                     <div
-                      className="flex justify-self-center gap-4"
+                      className="flex justify-self-center gap-4 lg:self-center"
                       style={{ ...moveRem(positions.images), ...imageSize }}
                     >
                       {project.images.length === 0 ? (
