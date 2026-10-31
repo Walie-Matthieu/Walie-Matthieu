@@ -24,7 +24,7 @@ const projects: Project[] = [
   {
     name: "West-Fun", //Projet 1
     description:
-      "A mobile party game I'm building for fun and also to improve my skills on mobile development, there are multiple game modes with different themes, I know the name could be better but I'm also working on it!",
+      "A mobile party game I'm building for fun and also to improve my skills on mobile development, there are multiple game modes with different themes,\nI know the name could be better but I'm also working on it!",
     images: ["/logos/photo%20appli.png"],
     stack: [{ name: "Flutter", logo: "/logos/flutter-logo.webp" }],
   },
@@ -43,6 +43,10 @@ const projects: Project[] = [
 ];
 
 const SWIPE_THRESHOLD = 60;
+
+// Pavé tactile : distance horizontale cumulée (px) pour changer de slide, et pause (ms) qui marque la fin d'un geste
+const WHEEL_THRESHOLD = 50;
+const WHEEL_IDLE_MS = 150;
 
 // Positions : x négatif = gauche, positif = droite ; y négatif = haut, positif = bas
 // heading (titre + sous-titre) en px, les autres en rem (1 rem = 16 px)
@@ -140,6 +144,42 @@ export default function ProjectsCarousel() {
     };
   }, []);
 
+  // Défilement latéral au pavé tactile (laptop et grand écran) : un geste = un projet
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section || isMobile) return;
+
+    let delta = 0;
+    let handled = false;
+    let idleTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const onWheel = (event: WheelEvent) => {
+      if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+      // Évite aussi le retour arrière du navigateur sur un balayage horizontal
+      event.preventDefault();
+
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        delta = 0;
+        handled = false;
+      }, WHEEL_IDLE_MS);
+
+      if (handled) return;
+      delta += event.deltaX;
+      if (Math.abs(delta) < WHEEL_THRESHOLD) return;
+
+      const step = delta > 0 ? 1 : -1;
+      setIndex((i) => Math.min(Math.max(i + step, 0), projects.length - 1));
+      handled = true;
+    };
+
+    section.addEventListener("wheel", onWheel, { passive: false });
+    return () => {
+      section.removeEventListener("wheel", onWheel);
+      clearTimeout(idleTimer);
+    };
+  }, [isMobile]);
+
   const onPointerDown = (event: React.PointerEvent) => {
     dragStart.current = event.clientX;
     setIsDragging(true);
@@ -160,7 +200,7 @@ export default function ProjectsCarousel() {
   };
 
   const arrowClass =
-    "!h-12 !w-12 !rounded-full !p-0 !bg-white/10 !text-white hover:!bg-white/20 disabled:opacity-30 disabled:hover:!bg-white/10";
+    "!h-12 !w-12 !rounded-full !p-0 !bg-white/10 !text-white hover:!bg-white/20 disabled:opacity-30 disabled:hover:!bg-white/10 max-lg:!hidden";
 
   return (
     <section
@@ -224,7 +264,7 @@ export default function ProjectsCarousel() {
                       className="flex flex-col justify-center gap-4"
                       style={moveRem(positions.description)}
                     >
-                      <p className="text-base font-semibold leading-7 text-gray-200">
+                      <p className="whitespace-pre-line text-base font-semibold leading-7 text-gray-200">
                         {project.description}
                       </p>
                       {project.url && (
